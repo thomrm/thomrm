@@ -1,7 +1,7 @@
-<div class="content__about">About</div>
+<div class="content__contact">Contact</div>
 
 <style>
-    .content__about {
+    .content__contact {
         display: flex;
         padding: 0px 50px;
         flex-direction: column;

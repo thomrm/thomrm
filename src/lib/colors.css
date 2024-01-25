@@ -1,0 +1,31 @@
+:root .wrapper.light {
+    --White: #FFFFFF;
+    --Black: #000000;
+
+    --Primary-Color: #FF5C5C;
+    --Background-Primary: #FFFFFF;
+    --Header-Text: #000000;
+    --Body-Text: #333333;
+    --Sub-Text: #666666;
+    --Color-Overlay: #FFFFFF;
+    --Background-Base: #EEEEEE;
+    --Background-Alt: #FFFFFF;
+    --Border: #DDDDDD;
+    --Shadow: #00000040;
+}
+
+:root .wrapper.dark {
+    --White: #FFFFFF;
+    --Black: #000000;
+
+    --Primary-Color: #B487FF;
+    --Background-Primary: #000000;
+    --Header-Text: #FFFFFF;
+    --Body-Text: #DDDDDD;
+    --Sub-Text: #BBBBBB;
+    --Color-Overlay: #000000;
+    --Background-Base: #111111;
+    --Background-Alt: #222222;
+    --Border: #222222;
+    --Shadow: #000000cc;
+}
