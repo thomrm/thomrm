@@ -71,6 +71,7 @@
     .wrapper {
         background-color: var(--Background-Base);
         font-family: 'Norms Medium';
+        font-size: 18px;
         color: var(--Body-Text);
         height: 100vh;
         display: flex;
@@ -81,6 +82,7 @@
         background-position: center;
         background-size: cover;
         transition: background-color 200ms, background-image 200ms, color 200ms;
+        overflow: hidden;
 
         &.light {
             background-image: url('/Map-Light.svg');

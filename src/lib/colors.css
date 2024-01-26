@@ -11,6 +11,7 @@
     --Background-Base: #EEEEEE;
     --Background-Alt: #FFFFFF;
     --Border: #DDDDDD;
+    --Divider: #EEEEEE;
     --Shadow: #00000025;
 }
 
@@ -27,5 +28,6 @@
     --Background-Base: #111111;
     --Background-Alt: #222222;
     --Border: #222222;
+    --Divider: #111111;
     --Shadow: #000000cc;
 }
