@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { fade, fly, scale } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
 	import { expoOut } from 'svelte/easing';
 
     let ready = false;
