@@ -82,7 +82,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 30px;
             align-self: stretch;
 
             & h1 {
