@@ -1,0 +1,63 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+:root {
+    --Padding-Page: 50px;
+    --Padding-XLarge: 50px;
+    --Padding-Large: 30px;
+    --Padding-Medium: 20px;
+    --Padding-Small: 10px;
+    --Padding-XSmall: 5px;
+    font-size: 10px;
+}
+
+:root body {
+    font-family: 'Norms';
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+:root h1 {
+    font-weight: 700;
+    font-size: 7rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--Header-Text);
+    transition: color 200ms;
+}
+
+:root h2 {
+    font-weight: 700;
+    font-size: 6rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--Header-Text);
+    transition: color 200ms;
+}
+
+:root h3 {
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: var(--Sub-Text);
+    transition: color 200ms;
+}
+
+:root p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: var(--Body-Text);
+    transition: color 200ms;
+}
+
+:root bold {
+    font-weight: 700;
+}

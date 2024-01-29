@@ -11,7 +11,7 @@
     <div class="page-contact" in:fade={{delay: 200, duration: 200}}>
         <div class="contact__header">
             <h1>Send Me a Message.</h1>
-            <p>Say hi, ask me a question, or hire me.</p>
+            <h3>Say hi, ask me a question, or hire me.</h3>
         </div>
         <div class="contact__buttons">
             <a href="#1">mailto:thomas@reedmunoz.com</a>
@@ -27,55 +27,44 @@
 <style>
     .page-contact {
         display: flex;
-        padding: 0px 50px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
         flex: 1 0 0;
         align-self: stretch;
+
+        padding: 0px var(--Padding-Page);
+        gap: var(--Padding-XLarge);
     }
 
     .contact__header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
         align-self: stretch;
 
-        & h1 {
-            color: var(--Header-Text);
-            font-family: "Norms Bold";
-            font-size: 60px;
-            line-height: 60px;
-            letter-spacing: -0.04em;
-            transition: color 200ms;
-        }
-
-        & p {
-            color: var(--Sub-Text);
-            font-size: 25px;
-            letter-spacing: -0.02em;
-            transition: color 200ms;
-        }
+        gap: var(--Padding-Medium);
     }
 
     .contact__buttons {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
+
+        gap: var(--Padding-Small);
 
         & a {
             display: flex;
             height: 56px;
-            padding: 0 25px;
             justify-content: center;
             align-items: center;
-            gap: 10px;
             border-radius: 999px;
+            text-decoration: none;
+
+            padding: 0 var(--Padding-Large);
+
             background: var(--Primary-Color);
             color: var(--Color-Overlay);
-            text-decoration: none;
+
             transition: color 200ms, background-color 200ms;
 
             &.icon {

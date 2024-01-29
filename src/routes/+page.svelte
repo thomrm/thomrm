@@ -23,8 +23,8 @@
         </div>
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
-                <h1>Thomas Reed-Muñoz</h1>
-                <p>Product and Visual Design in NYC</p>
+                <h1>Thomas Reed-Mu&ntilde;oz</h1>
+                <h3>Product &amp; Visual Design in <bold>NYC</bold></h3>
             </div>
         </div>
     </div>
@@ -33,13 +33,14 @@
 <style>
     .page-about {
         display: flex;
-        padding: 0px 50px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
         flex: 1 0 0;
         align-self: stretch;
+
+        padding: 0px var(--Padding-Page);
+        gap: var(--Padding-Large);
     }
 
     .about__top {
@@ -47,9 +48,10 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        gap: 10px;
         flex: 1 0 0;
         align-self: stretch;
+
+        gap: var(--Padding-Small);
     }
 
     .pin-contain {
@@ -77,29 +79,14 @@
         align-items: center;
         flex: 1 0 0;
         align-self: stretch;
+    }
+    
+    .about__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
 
-        & .about__header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            align-self: stretch;
-
-            & h1 {
-                color: var(--Header-Text);
-                font-family: "Norms Bold";
-                font-size: 70px;
-                line-height: 50px;
-                letter-spacing: -0.04em;
-                transition: color 200ms;
-            }
-
-            & p {
-                color: var(--Sub-Text);
-                font-size: 25px;
-                letter-spacing: -0.02em;
-                transition: color 200ms;
-            }
-        }
+        gap: var(--Padding-Medium);
     }
 </style>

@@ -13,7 +13,7 @@
         <div class="skill-card" transition:fly={{ delay: 200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
             <div class="skill-card__header">
                 <h2>Expert</h2>
-                <p>Confident & Knowledgable</p>
+                <h3>Confident &amp; Knowledgable</h3>
             </div>
             <div class="skill-card__divider"></div>
             <ul class="skill-card__list">
@@ -31,7 +31,7 @@
         <div class="skill-card" transition:fly={{ delay: 400, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
             <div class="skill-card__header">
                 <h2>Advanced</h2>
-                <p>Familiar & Capable</p>
+                <h3>Familiar &amp; Capable</h3>
             </div>
             <div class="skill-card__divider"></div>
             <ul class="skill-card__list">
@@ -48,7 +48,7 @@
         <div class="skill-card" transition:fly={{ delay: 600, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
             <div class="skill-card__header">
                 <h2>Beginner</h2>
-                <p>Willing To Learn</p>
+                <h3>Willing To Learn</h3>
             </div>
             <div class="skill-card__divider"></div>
             <ul class="skill-card__list">
@@ -61,24 +61,28 @@
 <style>
     .page-skills {
         display: flex;
-        padding: 0px 50px;
         align-items: flex-start;
-        gap: 20px;
         flex: 1 0 0;
         align-self: stretch;
+
+        padding: 0px var(--Padding-Page);
+        gap: var(--Padding-Medium);
     }
 
     .skill-card {
         display: flex;
-        padding: 30px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;
         flex: 1 0 0;
         align-self: stretch;
-        border-radius: 12px;
+        border-radius: 1.2rem;
+
+        padding: var(--Padding-Large);
+        gap: var(--Padding-Large);
+
         border-bottom: 3px solid var(--Primary-Color);
         background: var(--Background-Alt);
+
         transition: background-color 200ms, border-color 200ms;
     }
     
@@ -86,33 +90,18 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
         align-self: stretch;
 
-        & h2 {
-            color: var(--Header-Text);
-            font-family: "Norms Bold";
-            line-height: 60px;
-            font-size: 60px;
-            letter-spacing: -0.04em;
-            text-transform: uppercase;
-            transition: color 200ms;
-        }
-
-        & p {
-            color: var(--Sub-Text, #666);
-            font-size: 24px;
-            letter-spacing: -0.02em;
-            text-transform: capitalize;
-            transition: color 200ms;
-        }
+        gap: var(--Padding-small);
     }
 
     .skill-card__divider {
         width: 100%;
         height: 2px;
-        background-color: var(--Divider);
         border-radius: 999px;
+
+        background-color: var(--Divider);
+
         transition: background-color 200ms;
     }
 
@@ -120,18 +109,22 @@
         display: flex;
         align-items: flex-start;
         align-content: flex-start;
-        gap: 10px;
         align-self: stretch;
         flex-wrap: wrap;
+
+        gap: var(--Padding-Small);
 
         & li {
             display: flex;
             height: 44px;
-            padding: 0 20px;
             align-items: center;
             border-radius: 999px;
+
+            padding: 0 var(--Padding-Medium);
+
             background: var(--Primary-Color);
             color: var(--Color-Overlay);
+
             transition: background-color 200ms, color 200ms;
         }
     }

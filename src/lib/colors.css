@@ -1,4 +1,4 @@
-:root .wrapper.light {
+:root .app-wrapper.light {
     --White: #FFFFFF;
     --Black: #000000;
 
@@ -15,7 +15,7 @@
     --Shadow: #00000025;
 }
 
-:root .wrapper.dark {
+:root .app-wrapper.dark {
     --White: #FFFFFF;
     --Black: #000000;
 
@@ -25,9 +25,9 @@
     --Body-Text: #DDDDDD;
     --Sub-Text: #BBBBBB;
     --Color-Overlay: #000000;
-    --Background-Base: #111111;
+    --Background-Base: #1A1A1A;
     --Background-Alt: #222222;
-    --Border: #222222;
+    --Border: #333333;
     --Divider: #111111;
     --Shadow: #000000cc;
 }
