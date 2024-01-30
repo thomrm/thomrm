@@ -61,3 +61,48 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 :root bold {
     font-weight: 700;
 }
+
+:root .button {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+
+    padding: 0 var(--Padding-Large);
+
+    background: var(--Background-Primary);
+    color: var(--Primary-Color);
+
+    transition: color 200ms, background-color 200ms;
+
+    &.icon {
+        padding: 0;
+        width: 60px;
+    }
+
+    &.split-left {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    &.split-right {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    &:focus-visible {
+        outline-color: var(--Primary-Color);
+        outline-width: 3px;
+        outline-offset: 3px;
+        outline-style: solid;
+    }
+
+    &:hover {
+        background-color: var(--Primary-Color);
+        color: var(--Color-Overlay);
+    }
+}

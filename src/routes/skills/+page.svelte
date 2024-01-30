@@ -92,7 +92,7 @@
         align-items: flex-start;
         align-self: stretch;
 
-        gap: var(--Padding-small);
+        gap: var(--Padding-Small);
     }
 
     .skill-card__divider {

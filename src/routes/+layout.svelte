@@ -133,7 +133,14 @@
             color: var(--Primary-Color);
             background-color: var(--Background-Primary);
 
-            transition: all 200ms;
+            transition: border-color 200ms, background-color 200ms, color 200ms;
+
+            &:focus-visible {
+                outline-color: var(--Primary-Color);
+                outline-width: 3px;
+                outline-offset: 3px;
+                outline-style: solid;
+            }
 
             &:hover {
                 border-color: var(--Border);

@@ -11,16 +11,16 @@
     <div class="page-projects" in:fade={{delay: 200, duration: 200}}>
         <div class="slides-contain">
             <div class="slides-nav">
-                <a href="#1" class="slides-nav__left">
+                <button class="button icon slides-nav__left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                </a>
-                <a href="#1" class="slides-nav__right">
+                </button>
+                <button class="button icon slides-nav__right">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                </a>
+                </button>
             </div>
             <ul class="slides-items">
                 <li class="slide slide--1">
@@ -71,19 +71,6 @@
         position: absolute;
         right: 30px;
         bottom: 33px;
-
-        & a {
-            display: flex;
-            width: 60px;
-            height: 60px;
-            justify-content: center;
-            align-items: center;
-            border-radius: 999px;
-            background: var(--Background-Primary);
-            color: var(--Primary-Color);
-
-            transition: background-color 200ms, color 200ms;
-        }
     }
 
     .slides-items {
