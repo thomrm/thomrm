@@ -61,6 +61,7 @@
 <style>
     .page-skills {
         display: flex;
+        max-width: 1300px;
         align-items: flex-start;
         flex: 1 0 0;
         align-self: stretch;
@@ -119,6 +120,7 @@
             height: 44px;
             align-items: center;
             border-radius: 999px;
+            font-size: 1.6rem;
 
             padding: 0 var(--Padding-Medium);
 

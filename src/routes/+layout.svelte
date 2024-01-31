@@ -77,8 +77,7 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        flex-shrink: 0;
+        align-items: center;
         overflow: hidden;
 
         background-image: url('/Map-Light.svg');
@@ -164,8 +163,8 @@
 
     .page-content {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         flex: 1 0 0;
         align-self: stretch;
     }

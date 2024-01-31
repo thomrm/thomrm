@@ -39,6 +39,7 @@
 <style>
     .page-contact {
         display: flex;
+        max-width: 1300px;
         flex-direction: column;
         justify-content: center;
         align-items: center;

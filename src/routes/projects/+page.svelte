@@ -77,6 +77,7 @@
 <style>
     .page-projects {
         display: flex;
+        max-width: 1300px;
         align-items: flex-start;
         flex: 1 0 0;
         align-self: stretch;
