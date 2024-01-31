@@ -12,7 +12,7 @@
     <div class="page-about">
         <div class="about__top">
             <div class="pin-contain">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="95" viewBox="0 0 64 95" class="pin" transition:fly={{ delay: 500, duration: 1000, y: -150, opacity: 0, easing: expoOut }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="95" viewBox="0 0 64 95" class="pin" transition:fly={{ duration: 1000, delay: 500, y: -150, opacity: 0, easing: expoOut }}>
                     <path d="M26.5567 85.3958C17.4229 74.405 -3.8147e-06 54.8743 0 32C3.8147e-06 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32C64 54.8743 46.5771 74.405 37.4433 85.3958C36.0005 87.132 34.0002 88 32 88C29.9997 88 27.9995 87.132 26.5567 85.3958Z" />
                     <circle cx="32" cy="32" r="16" fill="white"/>
                 </svg>
@@ -54,10 +54,21 @@
         gap: var(--Padding-Small);
     }
 
+    @keyframes -global-animate-pin {
+        0% { transform: translate(0,0); }
+        50% { transform: translate(0,-10px); }
+        100% { transform: translate(0,0); }
+    }
+
+    @keyframes -global-animate-shadow {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(0.75); opacity: 0.75; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
     .pin-contain {
         display: flex;
         padding: 12px 0px;
-        gap: 6px;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
@@ -65,11 +76,19 @@
         & .pin {
             fill: var(--Primary-Color);
             transition: fill 200ms;
+            animation-name: animate-pin;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
         }
 
         & .shadow {
             fill: var(--Shadow);
             transition: fill 200ms;
+            animation-name: animate-shadow;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
         }
     }
 
