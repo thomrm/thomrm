@@ -42,7 +42,7 @@
         max-width: 1300px;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         flex: 1 0 0;
         align-self: stretch;
 
@@ -53,7 +53,7 @@
     .contact__header {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         align-self: stretch;
 
         gap: var(--Padding-Medium);
@@ -62,6 +62,7 @@
     .contact__buttons {
         display: flex;
         align-items: flex-start;
+        gap: 1px;
     }
 
     .tooltip-contain {

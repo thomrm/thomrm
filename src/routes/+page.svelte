@@ -24,7 +24,7 @@
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
                 <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
-                <h3>Product &amp; Visual Design in <bold>NYC</bold></h3>
+                <h3>Product &amp; Visual Design in NYC.</h3>
             </div>
         </div>
     </div>
@@ -41,7 +41,6 @@
         align-self: stretch;
 
         padding: 0px var(--Padding-Page);
-        gap: var(--Padding-Large);
     }
 
     .about__top {
@@ -69,7 +68,7 @@
 
     .pin-contain {
         display: flex;
-        padding: 12px 0px;
+        padding: 26px 0px;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;

@@ -81,7 +81,7 @@
         border-radius: 1.2rem;
 
         padding: var(--Padding-Large);
-        gap: var(--Padding-Large);
+        gap: var(--Padding-Medium);
 
         border-bottom: 3px solid var(--Primary-Color);
         background: var(--Background-Alt);
@@ -122,7 +122,7 @@
             display: flex;
             height: 44px;
             align-items: center;
-            border-radius: 999px;
+            border-radius: 6px;
             font-size: 1.6rem;
 
             padding: 0 var(--Padding-Medium);
