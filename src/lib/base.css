@@ -15,6 +15,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-size: 10px;
 }
 
+@media screen and (max-width: 992px) {
+    :root {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 8px;
+    }
+}
+
 :root body {
     font-family: 'Norms';
     font-weight: 500;
@@ -70,13 +82,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-decoration: none;
     border: none;
     cursor: pointer;
+    outline-color: transparent;
+    outline-width: 3px;
+    outline-style: solid;
 
     padding: 0 var(--Padding-Large);
 
     background: var(--Background-Primary);
     color: var(--Primary-Color);
 
-    transition: color 200ms, background-color 200ms;
+    transition: outline-color 200ms, outline-offset 200ms, color 200ms, background-color 200ms;
 
     &.icon {
         padding: 0;
@@ -98,6 +113,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         outline-width: 3px;
         outline-offset: 3px;
         outline-style: solid;
+        z-index: 3;
     }
 
     &:hover {

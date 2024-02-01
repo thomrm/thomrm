@@ -23,7 +23,7 @@
         </div>
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
-                <h1>Thomas Reed-Mu&ntilde;oz</h1>
+                <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
                 <h3>Product &amp; Visual Design in <bold>NYC</bold></h3>
             </div>
         </div>
@@ -108,5 +108,9 @@
         align-self: stretch;
 
         gap: var(--Padding-Medium);
+
+        & h1 {
+            text-align: center;
+        }
     }
 </style>

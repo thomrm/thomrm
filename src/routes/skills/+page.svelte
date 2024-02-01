@@ -15,7 +15,7 @@
                 <h2>Expert</h2>
                 <h3>Confident &amp; Knowledgable</h3>
             </div>
-            <div class="skill-card__divider"></div>
+            <hr />
             <ul class="skill-card__list">
                 <li>Figma</li>
                 <li>HTML</li>
@@ -33,7 +33,7 @@
                 <h2>Advanced</h2>
                 <h3>Familiar &amp; Capable</h3>
             </div>
-            <div class="skill-card__divider"></div>
+            <hr />
             <ul class="skill-card__list">
                 <li>Git</li>
                 <li>React</li>
@@ -50,7 +50,7 @@
                 <h2>Beginner</h2>
                 <h3>Willing To Learn</h3>
             </div>
-            <div class="skill-card__divider"></div>
+            <hr />
             <ul class="skill-card__list">
                 <li>Anything</li>
             </ul>
@@ -65,6 +65,7 @@
         align-items: flex-start;
         flex: 1 0 0;
         align-self: stretch;
+        flex-wrap: wrap;
 
         padding: 0px var(--Padding-Page);
         gap: var(--Padding-Medium);
@@ -72,6 +73,7 @@
 
     .skill-card {
         display: flex;
+        min-width: 300px;
         flex-direction: column;
         align-items: flex-start;
         flex: 1 0 0;
@@ -85,6 +87,17 @@
         background: var(--Background-Alt);
 
         transition: background-color 200ms, border-color 200ms;
+
+        & hr {
+            width: 100%;
+            margin: 0;
+            border: 0;
+            border-top: 2px solid;
+            border-radius: 999px;
+            border-color: var(--Divider);
+
+            transition: border-color 200ms;
+        }
     }
     
     .skill-card__header {
@@ -94,16 +107,6 @@
         align-self: stretch;
 
         gap: var(--Padding-Small);
-    }
-
-    .skill-card__divider {
-        width: 100%;
-        height: 2px;
-        border-radius: 999px;
-
-        background-color: var(--Divider);
-
-        transition: background-color 200ms;
     }
 
     .skill-card__list {
