@@ -15,7 +15,6 @@
                 <h2>Expert</h2>
                 <h3>Confident &amp; Knowledgable</h3>
             </div>
-            <hr />
             <ul class="skill-card__list">
                 <li>Figma</li>
                 <li>HTML</li>
@@ -33,7 +32,6 @@
                 <h2>Advanced</h2>
                 <h3>Familiar &amp; Capable</h3>
             </div>
-            <hr />
             <ul class="skill-card__list">
                 <li>Git</li>
                 <li>React</li>
@@ -50,7 +48,6 @@
                 <h2>Beginner</h2>
                 <h3>Willing To Learn</h3>
             </div>
-            <hr />
             <ul class="skill-card__list">
                 <li>Anything</li>
             </ul>
@@ -80,8 +77,8 @@
         align-self: stretch;
         border-radius: 1.2rem;
 
-        padding: var(--Padding-Large);
-        gap: var(--Padding-Medium);
+        padding: var(--Padding-Page);
+        gap: var(--Padding-Large);
 
         border-bottom: 3px solid var(--Primary-Color);
         background: var(--Background-Alt);
@@ -122,7 +119,7 @@
             display: flex;
             height: 44px;
             align-items: center;
-            border-radius: 6px;
+            border-radius: 999px;
             font-size: 1.6rem;
 
             padding: 0 var(--Padding-Medium);

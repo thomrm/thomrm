@@ -62,7 +62,6 @@
     .contact__buttons {
         display: flex;
         align-items: flex-start;
-        gap: 1px;
     }
 
     .tooltip-contain {

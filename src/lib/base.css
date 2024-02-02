@@ -86,7 +86,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     align-items: center;
     border-radius: 999px;
     text-decoration: none;
-    border: none;
+    border: 2px solid var(--Primary-Color);
+    box-sizing: border-box;
     cursor: pointer;
     outline-color: transparent;
     outline-width: 3px;
@@ -107,6 +108,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     &.split-left {
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
+        border-right: 0px;
     }
 
     &.split-right {
