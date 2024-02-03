@@ -1,8 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import { fade, fly } from 'svelte/transition';
-	import { quartInOut } from 'svelte/easing';
-    import Slide from './Slide.svelte';
+    import { fade } from 'svelte/transition';
 
     let ready = false;
     let slideNum = 1;
@@ -37,39 +35,33 @@
 {#if ready}
     <div class="page-projects" in:fade={{delay: 200, duration: 200}}>
         <div class="slides-contain">
-            <div class="slides-nav">
-                <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-                <button class="button icon slides-nav__right" on:click={(e) => nextSlide(e)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+            <div class="slides-leftcol">
+                <div class="slides-content">
+                    <h1>Juniper</h1>
+                    <h3>A simple design system built in figma with clarity and accessibility in mind.</h3>
+                    <ul class="slides-skills">
+                        <li>Typography</li>
+                        <li>Iconography</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+                <div class="slides-nav">
+                    <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="button icon slides-nav__right" on:click={(e) => nextSlide(e)}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="right-buttons">
+                        <a href="#1" class="button">View Project</a>
+                    </div>
+                </div>
             </div>
-            <ul class="slides-items">
-
-                {#if slideNum == 1}
-                    <li class="slide-contain" in:fly={{ delay: 500, duration: 500, x: dir+'vw', opacity: 1, easing: quartInOut }} out:fly={{ duration: 500, x: -dir+'vw', opacity: 1, easing: quartInOut }}>
-                        <Slide id=1 name='Slide 1' />
-                    </li>
-                {/if}
-
-                {#if slideNum == 2}
-                    <li class="slide-contain" in:fly={{ delay: 500, duration: 500, x: dir+'vw', opacity: 1, easing: quartInOut }} out:fly={{ duration: 500, x: -dir+'vw', opacity: 1, easing: quartInOut }}>
-                        <Slide id=2 name='Slide 2' />
-                    </li>
-                {/if}
-
-                {#if slideNum == 3}
-                    <li class="slide-contain" in:fly={{ delay: 500, duration: 500, x: dir+'vw', opacity: 1, easing: quartInOut }} out:fly={{ duration: 500, x: -dir+'vw', opacity: 1, easing: quartInOut }}>
-                        <Slide id=3 name='Slide 3' />
-                    </li>
-                {/if}
-
-            </ul>
+            <div class="slides-image slide-1"></div>
         </div>
     </div>
 {/if}
@@ -87,37 +79,96 @@
 
     .slides-contain {
         display: flex;
+        align-items: flex-start;
+        flex: 1 0 0;
+        align-self: stretch;
+        border-radius: 12px;
+        overflow: hidden;
+
+        border-bottom: 3px solid var(--Primary-Color);
+        background: var(--Background-Alt);
+
+        transition: background-color 200ms, border-color 200ms;
+    }
+
+    .slides-leftcol {
+        display: flex;
+        max-width: 350px;
         flex-direction: column;
         align-items: flex-start;
+        align-self: stretch;
+
+        padding: var(--Padding-Page);
+        gap: var(--Padding-Large);
+
+        & .slides-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1 0 0;
+            align-self: stretch;
+
+            gap: var(--Padding-Small);
+        }
+
+        & .slides-skills {
+            display: flex;
+            list-style-type: none;
+            align-items: flex-start;
+
+            gap: var(--Padding-XSmall);
+            padding: var(--Padding-Small) 0;
+
+            & li {
+                display: flex;
+                height: 32px;
+                padding: 0 15px;
+                align-items: center;
+                border-radius: 999px;
+                font-size: 1.4rem;
+                font-weight: 500;
+
+                gap: var(--Padding-Small);
+
+                background: var(--Primary-Color);
+                color: var(--Color-Overlay);
+
+                transition: background-color 200ms, color 200ms;
+            }
+        }
+
+        & .slides-nav {
+            display: flex;
+            align-items: flex-end;
+            align-self: stretch;
+
+            gap: var(--Padding-Small);
+        }
+
+        & .right-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            flex: 1 0 0;
+
+            gap: var(--Padding-Small);
+        }
+    }
+
+    .slides-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         flex: 1 0 0;
         align-self: stretch;
-        position: relative;
-    }
+        background-position: center;
+        background-size: cover;
 
-    .slides-nav {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        gap: 10px;
-        position: absolute;
-        right: 30px;
-        bottom: 33px;
-        z-index: 2;
-    }
+        gap: var(--Padding-Large);
 
-    .slides-items {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        flex: 1 0 0;
-        align-self: stretch;
-        list-style-type: none;
-        overflow: hidden;
-    }
-
-    .slide-contain {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        &.slide-1 {
+            background-image: url(/Slide1.png);
+        }
     }
 </style>

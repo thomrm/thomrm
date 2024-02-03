@@ -3,7 +3,6 @@
     import { fade } from 'svelte/transition';
 
     let ready = false;
-    let showTip = false;
     let tooltip = "Copy to Clipboard";
 
     onMount(() => ready = true);
