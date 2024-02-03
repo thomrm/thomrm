@@ -4,26 +4,37 @@
 
     let ready = false;
     let slideNum = 1;
-    let slideTotal = 3;
+
+    let slides = [
+        {
+            id: 1,
+            name: 'Juniper',
+            desc: 'A simple design system built in figma with clarity and accessibility in mind.',
+            skills: ['Typography', 'Iconography', 'Figma'],
+            image: '/Slide1.png'
+        },
+        {
+            id: 2,
+            name: 'Slide 2',
+            desc: 'This is slide 2.',
+            skills: ['Iconography', 'Figma'],
+            image: '/Slide2.png'
+        },
+        {
+            id: 3,
+            name: 'Slide 3',
+            desc: 'This is slide 3.',
+            skills: ['Typography'],
+            image: '/Slide2.png'
+        }
+    ]
 
     function nextSlide(e) {
-        slideNum === 3 ? slideNum = 1 : slideNum += 1;
-
-        const node = e.currentTarget;
-        node.disabled = true;
-        setTimeout(() => {
-            node.disabled = false;
-        }, 1000);
+        slideNum === slides.length ? slideNum = 1 : slideNum += 1;
     }
 
     function previousSlide(e) {
-        slideNum === 1 ? slideNum = slideTotal : slideNum -= 1;
-
-        const node = e.currentTarget;
-        node.disabled = true;
-        setTimeout(() => {
-            node.disabled = false;
-        }, 1000);
+        slideNum === 1 ? slideNum = slides.length : slideNum -= 1;
     }
 
     onMount(() => ready = true);
@@ -33,32 +44,19 @@
     <div class="page-projects" in:fade={{delay: 200, duration: 200}}>
         <div class="slides-contain">
             <div class="slides-leftcol">
-                <div class="slides-content">
-                    {#if slideNum == 1}
-                        <h1 in:fade={{delay: 200, duration: 400}}>Juniper</h1>
-                        <h3 in:fade={{delay: 400, duration: 400}}>A simple design system built in figma with clarity and accessibility in mind.</h3>
-                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
-                            <li>Typography</li>
-                            <li>Iconography</li>
-                            <li>Figma</li>
-                        </ul>
+                {#each slides as slide}
+                    {#if slideNum == slide.id}
+                        <div class="slides-content" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
+                            <h1>{slide.name}</h1>
+                            <h3>{slide.desc}</h3>
+                            <ul class="slides-skills">
+                                {#each slide.skills as skill}
+                                    <li>{skill}</li>
+                                {/each}
+                            </ul>
+                        </div>
                     {/if}
-                    {#if slideNum == 2}
-                        <h1 in:fade={{delay: 200, duration: 400}}>Slide 2</h1>
-                        <h3 in:fade={{delay: 400, duration: 400}}>This is slide 2.</h3>
-                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
-                            <li>Typography</li>
-                        </ul>
-                    {/if}
-                    {#if slideNum == 3}
-                        <h1 in:fade={{delay: 200, duration: 400}}>Slide 3</h1>
-                        <h3 in:fade={{delay: 400, duration: 400}}>This is slide 3.</h3>
-                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
-                            <li>Typography</li>
-                            <li>Iconography</li>
-                        </ul>
-                    {/if}
-                </div>
+                {/each}
                 <div class="slides-nav">
                     <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -71,20 +69,20 @@
                         </svg>
                     </button>
                     <div class="right-buttons">
-                        <a href="#1" class="button">View Project</a>
+                        {#each slides as slide}
+                            {#if slideNum == slide.id}
+                                <a href="#{slide.id}" class="button">View Project</a>
+                            {/if}
+                        {/each}
                     </div>
                 </div>
             </div>
             <div class="slides-image-contain">
-                {#if slideNum == 1}
-                    <div class="slides-image slide-1" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
-                {/if}
-                {#if slideNum == 2}
-                    <div class="slides-image slide-2" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
-                {/if}
-                {#if slideNum == 3}
-                    <div class="slides-image slide-2" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
-                {/if}
+                {#each slides as slide}
+                    {#if slideNum == slide.id}
+                        <img class="slides-image" src="{slide.image}" alt="{slide.name}" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}/>
+                    {/if}
+                {/each}
             </div>
         </div>
     </div>
@@ -116,10 +114,12 @@
     }
 
     .slides-leftcol {
+        position: relative;
         display: flex;
         width: 35rem;
         flex-direction: column;
         flex-shrink: inherit;
+        justify-content: flex-end;
         align-items: flex-start;
         align-self: stretch;
 
@@ -127,6 +127,10 @@
         gap: var(--Padding-Large);
 
         & .slides-content {
+            position: absolute;
+            top: var(--Padding-Page);
+            left: var(--Padding-Page);
+            right: var(--Padding-Page);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -192,20 +196,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background-position: center;
-        background-size: cover;
-
-        gap: var(--Padding-Large);
-
-        &.slide-1 {
-            background-image: url(/Slide1.png);
-        }
-
-        &.slide-2 {
-            background-image: url(/Slide2.png);
-        }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     @media screen and (max-width: 479px) {
@@ -218,7 +211,7 @@
             flex: 1 1 0;
         }
 
-        .slides-image {
+        .slides-image-contain {
             height: 250px;
         }
     }
