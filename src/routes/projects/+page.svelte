@@ -18,14 +18,14 @@
             name: 'Slide 2',
             desc: 'This is slide 2.',
             skills: ['Iconography', 'Figma'],
-            image: '/Slide2.png'
+            image: '/Slide2.jpg'
         },
         {
             id: 3,
             name: 'Slide 3',
             desc: 'This is slide 3.',
             skills: ['Typography'],
-            image: '/Slide2.png'
+            image: '/Slide3.jpg'
         }
     ]
 
@@ -137,7 +137,7 @@
             flex: 1 0 0;
             align-self: stretch;
 
-            gap: var(--Padding-Small);
+            gap: var(--Padding-Medium);
         }
 
         & .slides-skills {
