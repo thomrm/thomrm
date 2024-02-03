@@ -75,7 +75,17 @@
                     </div>
                 </div>
             </div>
-            <div class="slides-image slide-1"></div>
+            <div class="slides-image-contain">
+                {#if slideNum == 1}
+                    <div class="slides-image slide-1" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
+                {/if}
+                {#if slideNum == 2}
+                    <div class="slides-image slide-2" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
+                {/if}
+                {#if slideNum == 3}
+                    <div class="slides-image slide-2" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}></div>
+                {/if}
+            </div>
         </div>
     </div>
 {/if}
@@ -170,10 +180,20 @@
         }
     }
 
-    .slides-image {
+    .slides-image-contain {
+        background: #000;
         display: block;
         width: 100%;
         height: 100%;
+        position: relative;
+    }
+
+    .slides-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background-position: center;
         background-size: cover;
 
@@ -181,6 +201,10 @@
 
         &.slide-1 {
             background-image: url(/Slide1.png);
+        }
+
+        &.slide-2 {
+            background-image: url(/Slide2.png);
         }
     }
 
