@@ -5,10 +5,8 @@
     let ready = false;
     let slideNum = 1;
     let slideTotal = 3;
-    let dir = -100;
 
     function nextSlide(e) {
-        dir = 100;
         slideNum === 3 ? slideNum = 1 : slideNum += 1;
 
         const node = e.currentTarget;
@@ -19,7 +17,6 @@
     }
 
     function previousSlide(e) {
-        dir = -100;
         slideNum === 1 ? slideNum = slideTotal : slideNum -= 1;
 
         const node = e.currentTarget;
@@ -37,13 +34,30 @@
         <div class="slides-contain">
             <div class="slides-leftcol">
                 <div class="slides-content">
-                    <h1>Juniper</h1>
-                    <h3>A simple design system built in figma with clarity and accessibility in mind.</h3>
-                    <ul class="slides-skills">
-                        <li>Typography</li>
-                        <li>Iconography</li>
-                        <li>Figma</li>
-                    </ul>
+                    {#if slideNum == 1}
+                        <h1 in:fade={{delay: 200, duration: 400}}>Juniper</h1>
+                        <h3 in:fade={{delay: 400, duration: 400}}>A simple design system built in figma with clarity and accessibility in mind.</h3>
+                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
+                            <li>Typography</li>
+                            <li>Iconography</li>
+                            <li>Figma</li>
+                        </ul>
+                    {/if}
+                    {#if slideNum == 2}
+                        <h1 in:fade={{delay: 200, duration: 400}}>Slide 2</h1>
+                        <h3 in:fade={{delay: 400, duration: 400}}>This is slide 2.</h3>
+                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
+                            <li>Typography</li>
+                        </ul>
+                    {/if}
+                    {#if slideNum == 3}
+                        <h1 in:fade={{delay: 200, duration: 400}}>Slide 3</h1>
+                        <h3 in:fade={{delay: 400, duration: 400}}>This is slide 3.</h3>
+                        <ul class="slides-skills" in:fade={{delay: 600, duration: 400}}>
+                            <li>Typography</li>
+                            <li>Iconography</li>
+                        </ul>
+                    {/if}
                 </div>
                 <div class="slides-nav">
                     <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
@@ -93,8 +107,9 @@
 
     .slides-leftcol {
         display: flex;
-        max-width: 350px;
+        width: 35rem;
         flex-direction: column;
+        flex-shrink: inherit;
         align-items: flex-start;
         align-self: stretch;
 
@@ -156,12 +171,9 @@
     }
 
     .slides-image {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 1 0 0;
-        align-self: stretch;
+        display: block;
+        width: 100%;
+        height: 100%;
         background-position: center;
         background-size: cover;
 
@@ -169,6 +181,21 @@
 
         &.slide-1 {
             background-image: url(/Slide1.png);
+        }
+    }
+
+    @media screen and (max-width: 479px) {
+        .slides-contain {
+            flex-direction: column-reverse;
+        }
+
+        .slides-leftcol {
+            width: auto;
+            flex: 1 1 0;
+        }
+
+        .slides-image {
+            height: 250px;
         }
     }
 </style>

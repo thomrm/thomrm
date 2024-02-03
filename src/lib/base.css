@@ -86,6 +86,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     align-items: center;
     border-radius: 999px;
     text-decoration: none;
+    text-align: center;
     border: 2px solid var(--Primary-Color);
     box-sizing: border-box;
     cursor: pointer;
