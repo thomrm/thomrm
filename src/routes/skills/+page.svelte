@@ -77,7 +77,7 @@
         align-self: stretch;
         border-radius: 1.2rem;
 
-        padding: var(--Padding-Page);
+        padding: var(--Padding-XLarge);
         gap: var(--Padding-Large);
 
         border-bottom: 3px solid var(--Primary-Color);

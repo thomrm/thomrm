@@ -7,7 +7,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root {
     --Padding-Page: 50px;
-    --Padding-XLarge: 50px;
+    --Padding-XLarge: 40px;
     --Padding-Large: 30px;
     --Padding-Medium: 20px;
     --Padding-Small: 10px;
@@ -68,8 +68,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 :root p {
-    font-weight: 500;
-    font-size: 1.8rem;
+    font-weight: 400;
+    font-size: 2rem;
     line-height: 1.5;
     color: var(--Body-Text);
     transition: color 200ms;

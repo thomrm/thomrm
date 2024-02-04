@@ -15,17 +15,10 @@
         },
         {
             id: 2,
-            name: 'Slide 2',
-            desc: 'This is slide 2.',
-            skills: ['Iconography', 'Figma'],
-            image: '/Slide2.jpg'
-        },
-        {
-            id: 3,
-            name: 'Slide 3',
-            desc: 'This is slide 3.',
-            skills: ['Typography'],
-            image: '/Slide3.jpg'
+            name: 'Keyboard Case',
+            desc: 'A custom acrylic and stainless steel case for an unconventional keyboard.',
+            skills: ['Product Design', 'Fusion 360'],
+            image: '/Slide2.png'
         }
     ]
 
@@ -47,8 +40,8 @@
                 {#each slides as slide}
                     {#if slideNum == slide.id}
                         <div class="slides-content" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
-                            <h1>{slide.name}</h1>
-                            <h3>{slide.desc}</h3>
+                            <h2>{slide.name}</h2>
+                            <p>{slide.desc}</p>
                             <ul class="slides-skills">
                                 {#each slide.skills as skill}
                                     <li>{skill}</li>
@@ -58,22 +51,22 @@
                     {/if}
                 {/each}
                 <div class="slides-nav">
-                    <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                    <button class="button icon slides-nav__right" on:click={(e) => nextSlide(e)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
+                    {#each slides as slide}
+                        {#if slideNum == slide.id}
+                            <a href="#{slide.id}" class="button">View Project</a>
+                        {/if}
+                    {/each}
                     <div class="right-buttons">
-                        {#each slides as slide}
-                            {#if slideNum == slide.id}
-                                <a href="#{slide.id}" class="button">View Project</a>
-                            {/if}
-                        {/each}
+                        <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <button class="button icon slides-nav__right" on:click={(e) => nextSlide(e)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -116,21 +109,22 @@
     .slides-leftcol {
         position: relative;
         display: flex;
-        width: 35rem;
+        width: 45rem;
+        box-sizing: border-box;
         flex-direction: column;
         flex-shrink: inherit;
         justify-content: flex-end;
         align-items: flex-start;
         align-self: stretch;
 
-        padding: var(--Padding-Page);
+        padding: var(--Padding-XLarge);
         gap: var(--Padding-Large);
 
         & .slides-content {
             position: absolute;
-            top: var(--Padding-Page);
-            left: var(--Padding-Page);
-            right: var(--Padding-Page);
+            top: var(--Padding-XLarge);
+            left: var(--Padding-XLarge);
+            right: var(--Padding-XLarge);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -176,16 +170,16 @@
 
         & .right-buttons {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: flex-end;
             flex: 1 0 0;
+            justify-content: flex-end;
 
             gap: var(--Padding-Small);
         }
     }
 
     .slides-image-contain {
-        background: #000;
         display: block;
         width: 100%;
         height: 100%;
