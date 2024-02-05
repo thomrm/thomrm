@@ -24,7 +24,7 @@
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
                 <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
-                <h3>Product &amp; Visual Design in NYC.</h3>
+                <h3>Product and Visual Design in NYC, experienced in delivering End-to-End UI/UX.  Solving Problems and figuring out “Why?”</h3>
             </div>
         </div>
     </div>
@@ -109,6 +109,11 @@
         gap: var(--Padding-Medium);
 
         & h1 {
+            text-align: center;
+        }
+
+        & h3 {
+            max-width: 800px;
             text-align: center;
         }
     }
