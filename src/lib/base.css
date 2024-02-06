@@ -12,6 +12,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     --Padding-Medium: 20px;
     --Padding-Small: 10px;
     --Padding-XSmall: 5px;
+    --Padding-Inner: 100px;
+    --Padding-Nav: -180px;
     font-size: 10px;
 }
 
@@ -24,11 +26,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @media screen and (max-width: 768px) {
     :root {
         font-size: 8px;
+        --Padding-Inner: 30px;
     }
 }
 
 @media screen and (max-width: 479px) {
     :root {
+        --Padding-Nav: -120px;
         --Padding-Page: 20px;
     }
 }
@@ -51,7 +55,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 :root h2 {
     font-weight: 700;
     font-size: 5rem;
-    line-height: 1;
+    line-height: 1.2;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--Header-Text);
@@ -79,6 +83,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-weight: 700;
 }
 
+:root .small {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--Sub-Text);
+    transition: color 200ms;
+}
+
+:root .xsmall {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: var(--Sub-Text);
+    transition: color 200ms;
+}
+
 :root .button {
     display: flex;
     height: 60px;
@@ -93,6 +113,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     outline-color: transparent;
     outline-width: 3px;
     outline-style: solid;
+    font-family: 'Norms';
+    font-size: 1.8rem;
+    font-weight: 500;
 
     padding: 0 var(--Padding-Large);
 
@@ -128,5 +151,38 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     &:hover {
         background-color: var(--Primary-Color);
         color: var(--Color-Overlay);
+    }
+}
+
+:root .switch {
+    position: relative;
+    display: inline-flex;
+    width: 51px;
+    height: 24px;
+    padding: 3px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0px 3px;
+    flex-wrap: wrap;
+    border-radius: 999px;
+    cursor: pointer;
+
+    background: var(--Primary-Color);
+    color: var(--Background-Primary);
+
+    transition: background-color 200ms, color 200ms;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        top: 3px;
+        left: 3px;
+
+        background-color: var(--Background-Primary);
+
+        transition: all 200ms;
     }
 }

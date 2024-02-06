@@ -1,4 +1,4 @@
-:root .app-wrapper.light {
+.light {
     --White: #FFFFFF;
     --Black: #000000;
 
@@ -15,7 +15,7 @@
     --Shadow: #00000025;
 }
 
-:root .app-wrapper.dark {
+.dark {
     --White: #FFFFFF;
     --Black: #000000;
 

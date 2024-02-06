@@ -11,7 +11,8 @@
             name: 'Juniper',
             desc: 'A simple design system built in figma with clarity and accessibility in mind.',
             skills: ['Typography', 'Iconography', 'Figma'],
-            image: '/Slide1.png'
+            image: '/Slide1.png',
+            url: '/projects/juniper'
         },
         {
             id: 2,
@@ -53,7 +54,7 @@
                 <div class="slides-nav">
                     {#each slides as slide}
                         {#if slideNum == slide.id}
-                            <a href="#{slide.id}" class="button">View Project</a>
+                            <a href="{slide.url}" class="button">View Project</a>
                         {/if}
                     {/each}
                     <div class="right-buttons">

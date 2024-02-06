@@ -3,8 +3,7 @@
     import '../lib/colors.css';
     import '../lib/fonts.css';
     import { page } from '$app/stores';
-    import { fade, fly } from 'svelte/transition';
-	import { expoOut } from 'svelte/easing';
+    import { fade } from 'svelte/transition';
     import { onMount } from 'svelte';
 
     let dark = false;
@@ -147,6 +146,7 @@
         flex-direction: row;
         align-items: center;
         align-self: stretch;
+        z-index: 2;
 
         padding: var(--Padding-Page);
         gap: var(--Padding-Large);
@@ -324,6 +324,7 @@
         & .copy {
             font-size: 1.4rem;
             letter-spacing: -0.02em;
+            font-weight: 400;
 
             color: var(--Sub-Text);
         }
@@ -334,37 +335,6 @@
 
         &:checked + .switch:after {
             left: 30px;
-        }
-    }
-
-    .switch {
-        position: relative;
-        display: inline-flex;
-        padding: 3px;
-        align-items: flex-start;
-        align-content: flex-start;
-        gap: 0px 3px;
-        flex-wrap: wrap;
-        border-radius: 999px;
-        cursor: pointer;
-
-        background: var(--Primary-Color);
-        color: var(--Background-Primary);
-
-        transition: background-color 200ms, color 200ms;
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            top: 3px;
-            left: 3px;
-
-            background-color: var(--Background-Primary);
-
-            transition: all 200ms;
         }
     }
 </style>

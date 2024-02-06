@@ -24,7 +24,7 @@
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
                 <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
-                <h3>Product and Visual Design in NYC, experienced in delivering End-to-End UI/UX.  Solving Problems and figuring out “Why?”</h3>
+                <h3>Product and Visual Design in NYC.</h3>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
             animation-name: animate-pin;
             animation-duration: 4000ms;
             animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+            animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
         }
 
         & .shadow {
@@ -88,7 +88,7 @@
             animation-name: animate-shadow;
             animation-duration: 4000ms;
             animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+            animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
         }
     }
 
