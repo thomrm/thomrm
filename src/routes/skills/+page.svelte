@@ -79,11 +79,9 @@
 
         padding: var(--Padding-XLarge);
         gap: var(--Padding-Large);
-
-        border-bottom: 3px solid var(--Primary-Color);
         background: var(--Background-Alt);
 
-        transition: background-color 200ms, border-color 200ms;
+        transition: background-color 200ms;
 
         & hr {
             width: 100%;
@@ -102,8 +100,6 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;
-
-        gap: var(--Padding-Small);
     }
 
     .skill-card__list {
