@@ -419,7 +419,7 @@
                 align-items: center;
                 align-self: stretch;
 
-                padding: 0 var(--Padding-Inner);
+                padding: 0 var(--Padding-Large);
                 gap: var(--Padding-XLarge);
             }
 
