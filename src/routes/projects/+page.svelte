@@ -196,15 +196,25 @@
         object-fit: cover;
     }
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 768px) {
         .slides-contain {
             flex-direction: column-reverse;
-            min-height: 640px;
+            min-height: 720px;
         }
 
         .slides-leftcol {
             width: auto;
             flex: 1 1 0;
+        }
+
+        .slides-image-contain {
+            height: 350px;
+        }
+    }
+
+    @media screen and (max-width: 479px) {
+        .slides-contain {
+            min-height: 640px;
         }
 
         .slides-image-contain {
