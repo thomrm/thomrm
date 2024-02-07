@@ -17,6 +17,25 @@
     onMount(() => ready = true);
 </script>
 
+<svelte:head>
+   {#if !dark}
+      <style>
+         body { 
+            background-color: #EEEEEE; 
+            background-image: url('/Map-Light.svg');
+        }
+      </style>
+   {/if}
+   {#if dark}
+      <style>
+         body {
+            background-color: #111111;
+            background-image: url('/Map-Dark.svg');
+        }
+      </style>
+   {/if}
+</svelte:head>	
+
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
         <div class="page-header" in:fade={{delay: 200, duration: 200}}>
@@ -115,26 +134,17 @@
         align-items: center;
         overflow: hidden;
 
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-
         color: var(--Body-Text);
-        background-color: var(--Background-Base);
 
-        transition: background-color 200ms, background-image 200ms, color 200ms;
+        transition: color 200ms;
 
         &.light {
-            background-image: url('/Map-Light.svg');
-
             & .page-nav--vertical {
                 background-image: url('/Map-Light.svg');
             }
         }
 
         &.dark {
-            background-image: url('/Map-Dark.svg');
-
             & .page-nav--vertical {
                 background-image: url('/Map-Dark.svg');
             }

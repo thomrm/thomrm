@@ -70,7 +70,7 @@
 
     .skill-card {
         display: flex;
-        min-width: 300px;
+        min-width: 240px;
         flex-direction: column;
         align-items: flex-start;
         flex: 1 0 0;

@@ -199,6 +199,7 @@
     @media screen and (max-width: 479px) {
         .slides-contain {
             flex-direction: column-reverse;
+            min-height: 640px;
         }
 
         .slides-leftcol {
