@@ -43,10 +43,12 @@
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
         <div class="page-header" in:fade={{delay: 200, duration: 200}}>
-            <svg class="page-mark" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
-                <rect width="128" height="128" rx="64" fill="black"/>
-                <path d="M36 48H80C86.6274 48 92 53.3726 92 60C92 64.301 89.7373 68.0735 86.3373 70.192L92 80H89.6906C85.4034 80 81.4419 77.7128 79.2983 74L78.1436 72H72V80C67.5817 80 64 76.4183 64 72V64H80C82.2091 64 84 62.2091 84 60C84 57.7909 82.2091 56 80 56H56V80C51.5817 80 48 76.4183 48 72V56H44C39.5817 56 36 52.4183 36 48Z" fill="white"/>
-            </svg>
+            <a href="/" class="page-mark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
+                    <rect width="128" height="128" rx="64" fill="black"/>
+                    <path d="M36 48H80C86.6274 48 92 53.3726 92 60C92 64.301 89.7373 68.0735 86.3373 70.192L92 80H89.6906C85.4034 80 81.4419 77.7128 79.2983 74L78.1436 72H72V80C67.5817 80 64 76.4183 64 72V64H80C82.2091 64 84 62.2091 84 60C84 57.7909 82.2091 56 80 56H56V80C51.5817 80 48 76.4183 48 72V56H44C39.5817 56 36 52.4183 36 48Z" fill="white"/>
+                </svg>
+            </a>
             <nav class="page-nav">
                 <a href="/" aria-current={$page.url.pathname === '/'}>
                     <div class="icon-contain">
@@ -153,6 +155,12 @@
                 background-image: url('/Map-Dark.svg');
             }
         }
+    }
+
+    .page-mark {
+        display: block;
+        width: 80px;
+        height: 80px;
     }
 
     .page-header {
