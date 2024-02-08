@@ -1,9 +1,9 @@
 <script>
     import { onMount } from 'svelte';
-    import { fade } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+	import { expoOut } from 'svelte/easing';
 
     let ready = false;
-    let slideNum = 1;
 
     let slides = [
         {
@@ -16,68 +16,45 @@
         },
         {
             id: 2,
-            name: 'Keyboard Case',
+            name: 'BabyV Case',
             desc: 'A custom acrylic and stainless steel case for an unconventional keyboard.',
             skills: ['Product Design', 'Fusion 360'],
-            image: '/Slide2.png'
+            image: '/Slide2.png',
+            url: '/projects/babyv'
         }
     ]
-
-    function nextSlide(e) {
-        slideNum === slides.length ? slideNum = 1 : slideNum += 1;
-    }
-
-    function previousSlide(e) {
-        slideNum === 1 ? slideNum = slides.length : slideNum -= 1;
-    }
 
     onMount(() => ready = true);
 </script>
 
 {#if ready}
-    <div class="page-projects" in:fade={{delay: 200, duration: 200}}>
-        <div class="slides-contain">
-            <div class="slides-leftcol">
-                {#each slides as slide}
-                    {#if slideNum == slide.id}
-                        <div class="slides-content" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
+    <div class="page-projects">
+        <div class="projects-contain">
+
+            {#each slides as slide}
+
+                <a href="{slide.url}" class="project" in:fly|global={{ delay: slide.id*200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
+                    <img class="project-image" src="{slide.image}" alt="{slide.name}" />
+                    <div class="project-main">
+                        <div class="project-content">
                             <h2>{slide.name}</h2>
                             <p>{slide.desc}</p>
-                            <ul class="slides-skills">
+                            <ul class="project-skills">
                                 {#each slide.skills as skill}
                                     <li>{skill}</li>
                                 {/each}
                             </ul>
                         </div>
-                    {/if}
-                {/each}
-                <div class="slides-nav">
-                    {#each slides as slide}
-                        {#if slideNum == slide.id}
-                            <a href="{slide.url}" class="button">View Project</a>
-                        {/if}
-                    {/each}
-                    <div class="right-buttons">
-                        <button class="button icon slides-nav__left" on:click={(e) => previousSlide(e)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M19 12L5 12M5 12L11 18M5 12L11 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <div class="project-view">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 5.29289C8.68342 4.90237 9.31658 4.90237 9.70711 5.29289L16.4142 12L9.70711 18.7071C9.31658 19.0976 8.68342 19.0976 8.29289 18.7071C7.90237 18.3166 7.90237 17.6834 8.29289 17.2929L13.5858 12L8.29289 6.70711C7.90237 6.31658 7.90237 5.68342 8.29289 5.29289Z" />
                             </svg>
-                        </button>
-                        <button class="button icon slides-nav__right" on:click={(e) => nextSlide(e)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </button>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="slides-image-contain">
-                {#each slides as slide}
-                    {#if slideNum == slide.id}
-                        <img class="slides-image" src="{slide.image}" alt="{slide.name}" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}/>
-                    {/if}
-                {/each}
-            </div>
+                </a>
+
+            {/each}
+
         </div>
     </div>
 {/if}
@@ -86,59 +63,94 @@
     .page-projects {
         display: flex;
         max-width: 1300px;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         flex: 1 0 0;
         align-self: stretch;
 
         padding: 0px var(--Padding-Page);
     }
 
-    .slides-contain {
+    .projects-contain {
         display: flex;
-        align-items: flex-start;
-        flex: 1 0 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        align-self: stretch;
+
+        gap: var(--Padding-Medium);
+    }
+
+    .project {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         align-self: stretch;
         border-radius: 12px;
         overflow: hidden;
+        text-decoration: none;
+        outline-color: transparent;
+        outline-width: 3px;
+        outline-style: solid;
 
-        border-bottom: 3px solid var(--Primary-Color);
+        gap: var(--Padding-XLarge);
+        padding: var(--Padding-XLarge);
+
         background: var(--Background-Alt);
 
-        transition: background-color 200ms, border-color 200ms;
-    }
+        transition: outline-color 200ms, outline-offset 200ms, background-color 200ms, color 200ms, transform 200ms;
 
-    .slides-leftcol {
-        position: relative;
-        display: flex;
-        width: 45rem;
-        box-sizing: border-box;
-        flex-direction: column;
-        flex-shrink: inherit;
-        justify-content: flex-end;
-        align-items: flex-start;
-        align-self: stretch;
+        &:hover {
+            transform: scale(1.01);
+        }
 
-        padding: var(--Padding-XLarge);
-        gap: var(--Padding-Large);
+        &:focus-visible {
+            outline-color: var(--Primary-Color);
+            outline-width: 3px;
+            outline-offset: 3px;
+            outline-style: solid;
+            z-index: 3;
+        }
 
-        & .slides-content {
-            position: absolute;
-            top: var(--Padding-XLarge);
-            left: var(--Padding-XLarge);
-            right: var(--Padding-XLarge);
+        & .project-image {
+            height: 16rem;
+            width: 16rem;
+            border-radius: 999px;
+            object-fit: cover;
+
+            margin: var(--Padding-Medium) 0;
+        }
+
+        & .project-main {
             display: flex;
-            flex-direction: column;
+            min-width: 260px;
+            flex-direction: row;
+            justify-content: center;
             align-items: flex-start;
             flex: 1 0 0;
             align-self: stretch;
 
-            gap: var(--Padding-Medium);
+            gap: var(--Padding-Large);
         }
 
-        & .slides-skills {
+        & .project-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex: 1 0 0;
+            align-self: stretch;
+
+            gap: var(--Padding-XSmall);
+        }
+
+        & .project-skills {
             display: flex;
             list-style-type: none;
             align-items: flex-start;
+            flex-wrap: wrap;
 
             gap: var(--Padding-XSmall);
             padding: var(--Padding-Small) 0;
@@ -161,64 +173,16 @@
             }
         }
 
-        & .slides-nav {
+        & .project-view {
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             align-self: stretch;
 
-            gap: var(--Padding-Small);
-        }
+            color: var(--Sub-Text);
 
-        & .right-buttons {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            flex: 1 0 0;
-            justify-content: flex-end;
-
-            gap: var(--Padding-Small);
-        }
-    }
-
-    .slides-image-contain {
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .slides-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @media screen and (max-width: 768px) {
-        .slides-contain {
-            flex-direction: column-reverse;
-            min-height: 720px;
-        }
-
-        .slides-leftcol {
-            width: auto;
-            flex: 1 1 0;
-        }
-
-        .slides-image-contain {
-            height: 350px;
-        }
-    }
-
-    @media screen and (max-width: 479px) {
-        .slides-contain {
-            min-height: 640px;
-        }
-
-        .slides-image-contain {
-            height: 250px;
+            transition: color 200ms;
         }
     }
 </style>

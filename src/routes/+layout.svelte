@@ -161,6 +161,19 @@
         display: block;
         width: 80px;
         height: 80px;
+        outline-color: transparent;
+        outline-width: 3px;
+        outline-style: solid;
+        border-radius: 999px;
+        
+        transition: outline-color 200ms, outline-offset 200ms;
+
+        &:focus-visible {
+            outline-color: var(--Primary-Color);
+            outline-width: 3px;
+            outline-offset: 3px;
+            outline-style: solid;
+        }
     }
 
     .page-header {

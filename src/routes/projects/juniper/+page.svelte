@@ -27,7 +27,7 @@
         </div>
         <div class="project-content">
             <section>
-                <h1>You never get it right on the first try.</h1>
+                <h1>No one gets it right on the first try.</h1>
                 <p>When I started to redesign my personal portfolio, I wanted to approach it as I would any other project. Consistency and ease of iteration has always been an important part of my design process. Making it easier to revise and change reduces the eventual friction and frustrations. Juniper is the design system that I built to help with this.</p>
             </section>
             <div class="juniper-colors-contain">
@@ -136,7 +136,7 @@
                 </div>
             </section>
             <section>
-                <h1>Build Quickly.</h1>
+                <h1>Build quickly.</h1>
                 <p>I created a basic typographic guide with headers, sub-headers, body text, and footers. The clean and minimal style intended to take a back seat to content, but still remain appealing. Accompanying UI elements like buttons, switches, navigation, and labels kept simple as well. I built each piece in Figma as a component. Local Variables manage theming and Component Properties control the content.</p>
                 <div class="graphic-contain">
                     <div class="graphic-content">
