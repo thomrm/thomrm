@@ -8,6 +8,11 @@
     onMount(() => ready = true);
 </script>
 
+<svelte:head>
+	<title>Thomas Reed-Munoz's Design Skills</title>
+    <meta name="description" content="A list of relevant skills and attributes.">
+</svelte:head>
+
 {#if ready}
     <div class="page-skills">
         <div class="skill-card" transition:fly={{ delay: 200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>

@@ -7,6 +7,11 @@
     onMount(() => ready = true);
 </script>
 
+<svelte:head>
+	<title>Project: Juniper</title>
+    <meta name="description" content="A simple design system.">
+</svelte:head>
+
 {#if ready}
     <div class="project-contain" in:fade={{delay: 200, duration: 200}}>
         <div class="project-cover">
@@ -18,7 +23,7 @@
                 </div>
                 <div class="juniper-title">
                     <h1>Juniper</h1>
-                    <h3>A Design System</h3>
+                    <div class="sub-header">A Design System</div>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" class="start-scrolling" in:fade={{delay: 1200, duration: 200}}>
@@ -207,8 +212,8 @@
                     <div class="graphic-content">
                         <div class="graphic-label xsmall">Buttons</div>
                         <div class="content-buttons">
-                            <button class="button">Label</button>
-                            <button class="button icon">
+                            <button aria-label="Example Button" class="button">Label</button>
+                            <button aria-label="Example Button" class="button icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
@@ -219,9 +224,7 @@
                         <div class="graphic-label xsmall">Toggle</div>
                         <div class="content-buttons">
                             <input type="checkbox" id="test-switch" />
-                            <label for="test-switch" class="switch">
-                                
-                            </label>
+                            <label for="test-switch" class="switch"></label>
                         </div>
                     </div>
                 </div>

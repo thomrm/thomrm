@@ -68,7 +68,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     transition: color 200ms;
 }
 
-:root h3 {
+:root h3, .sub-header {
     font-weight: 400;
     font-size: 2.5rem;
     line-height: 1.5;

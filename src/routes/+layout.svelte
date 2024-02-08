@@ -43,7 +43,7 @@
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
         <div class="page-header" in:fade={{delay: 200, duration: 200}}>
-            <a href="/" class="page-mark">
+            <a href="/" aria-label="Navigate Home" class="page-mark">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
                     <rect width="128" height="128" rx="64" fill="black"/>
                     <path d="M36 48H80C86.6274 48 92 53.3726 92 60C92 64.301 89.7373 68.0735 86.3373 70.192L92 80H89.6906C85.4034 80 81.4419 77.7128 79.2983 74L78.1436 72H72V80C67.5817 80 64 76.4183 64 72V64H80C82.2091 64 84 62.2091 84 60C84 57.7909 82.2091 56 80 56H56V80C51.5817 80 48 76.4183 48 72V56H44C39.5817 56 36 52.4183 36 48Z" fill="white"/>
@@ -87,7 +87,7 @@
                 </a>
             </nav>
 
-            <button class="page-nav--menu" on:click={toggleNav}>
+            <button class="page-nav--menu" aria-label="Navigation Menu" on:click={toggleNav}>
                 {#if !nav}
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C3.44772 6 3 6.44772 3 7C3 7.55229 3.44772 8 4 8L20 8C20.5523 8 21 7.55229 21 7C21 6.44772 20.5523 6 20 6L4 6ZM3 12C3 11.4477 3.44771 11 4 11L20 11C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13L4 13C3.44771 13 3 12.5523 3 12ZM3 17C3 16.4477 3.44772 16 4 16L20 16C20.5523 16 21 16.4477 21 17C21 17.5523 20.5523 18 20 18L4 18C3.44772 18 3 17.5523 3 17Z" />

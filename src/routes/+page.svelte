@@ -8,6 +8,11 @@
     onMount(() => ready = true);
 </script>
 
+<svelte:head>
+	<title>Thomas Reed-Munoz. Product and Visual Design in NYC.</title>
+    <meta name="description" content="Personal portfolio for product and visual designer, Thomas Reed-Munoz.">
+</svelte:head>
+
 {#if ready}
     <div class="page-about">
         <div class="about__top">
@@ -24,7 +29,7 @@
         <div class="about__bottom">
             <div class="about__header" in:fade={{delay: 200, duration: 200}}>
                 <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
-                <h3>Product and Visual Design in NYC.</h3>
+                <div class="sub-header">Product and Visual Design in NYC.</div>
             </div>
         </div>
     </div>
@@ -106,7 +111,7 @@
         align-items: center;
         align-self: stretch;
 
-        gap: var(--Padding-Medium);
+        gap: var(--Padding-Small);
 
         & h1 {
             text-align: center;

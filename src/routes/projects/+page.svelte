@@ -27,6 +27,11 @@
     onMount(() => ready = true);
 </script>
 
+<svelte:head>
+	<title>Thomas Reed-Munoz's Design Projects</title>
+    <meta name="description" content="A selection of personal design projects.">
+</svelte:head>
+
 {#if ready}
     <div class="page-projects">
         <div class="projects-contain">
