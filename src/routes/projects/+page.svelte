@@ -16,7 +16,7 @@
         },
         {
             id: 2,
-            name: 'BabyV Case',
+            name: 'BabyV',
             desc: 'A custom acrylic and stainless steel case for an unconventional keyboard.',
             skills: ['Product Design', 'Fusion 360'],
             image: '/Slide2.png',
