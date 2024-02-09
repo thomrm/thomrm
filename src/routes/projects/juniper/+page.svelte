@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
+    import { slides } from '../../../lib/projects';
 
     let ready = false;
 
@@ -228,6 +229,27 @@
                         </div>
                     </div>
                 </div>
+            </section>
+            <section>
+                <div class="sub-header">Keep Reading</div>
+                <a href="{slides[1].url}" class="project-item with-border">
+                    <div class="item-main">
+                        <div class="item-content">
+                            <h2>{slides[1].name}</h2>
+                            <p>{slides[1].desc}</p>
+                            <ul class="item-skills">
+                                {#each slides[1].skills as skill}
+                                    <li>{skill}</li>
+                                {/each}
+                            </ul>
+                        </div>
+                        <div class="item-view">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 5.29289C8.68342 4.90237 9.31658 4.90237 9.70711 5.29289L16.4142 12L9.70711 18.7071C9.31658 19.0976 8.68342 19.0976 8.29289 18.7071C7.90237 18.3166 7.90237 17.6834 8.29289 17.2929L13.5858 12L8.29289 6.70711C7.90237 6.31658 7.90237 5.68342 8.29289 5.29289Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
             </section>
         </div>
     </div>

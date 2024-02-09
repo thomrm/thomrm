@@ -234,3 +234,111 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
     transition: color 200ms;
 }
+
+:root .project-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self: stretch;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    outline-color: transparent;
+    outline-width: 3px;
+    outline-style: solid;
+
+    gap: var(--Padding-XLarge);
+    padding: var(--Padding-XLarge);
+
+    background: var(--Background-Alt);
+
+    transition: outline-color 200ms, outline-offset 200ms, background-color 200ms, color 200ms, transform 200ms, border 200ms;
+
+    &.with-border {
+        border: 2px solid var(--Border);
+    }
+
+    &:hover {
+        transform: scale(1.01);
+    }
+
+    &:focus-visible {
+        outline-color: var(--Primary-Color);
+        outline-width: 3px;
+        outline-offset: 3px;
+        outline-style: solid;
+        z-index: 3;
+    }
+
+    & .item-image {
+        height: 16rem;
+        width: 16rem;
+        border-radius: 999px;
+        object-fit: cover;
+
+        margin: var(--Padding-Medium) 0;
+    }
+
+    & .item-main {
+        display: flex;
+        min-width: 260px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1 0 0;
+        align-self: stretch;
+
+        gap: var(--Padding-Large);
+    }
+
+    & .item-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1 0 0;
+        align-self: stretch;
+
+        gap: var(--Padding-XSmall);
+    }
+
+    & .item-skills {
+        display: flex;
+        list-style-type: none;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        gap: var(--Padding-XSmall);
+        padding: var(--Padding-Small) 0;
+
+        & li {
+            display: flex;
+            height: 32px;
+            padding: 0 15px;
+            align-items: center;
+            border-radius: 999px;
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            gap: var(--Padding-Small);
+
+            background: var(--Primary-Color);
+            color: var(--Color-Overlay);
+
+            transition: background-color 200ms, color 200ms;
+        }
+    }
+
+    & .item-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+
+        color: var(--Sub-Text);
+
+        transition: color 200ms;
+    }
+}
