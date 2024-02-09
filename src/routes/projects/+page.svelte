@@ -38,19 +38,19 @@
 
             {#each slides as slide}
 
-                <a href="{slide.url}" class="project" in:fly|global={{ delay: slide.id*200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
-                    <img class="project-image" src="{slide.image}" alt="{slide.name}" />
-                    <div class="project-main">
-                        <div class="project-content">
+                <a href="{slide.url}" class="item" in:fly|global={{ delay: slide.id*200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
+                    <img class="item-image" src="{slide.image}" alt="{slide.name}" />
+                    <div class="item-main">
+                        <div class="item-content">
                             <h2>{slide.name}</h2>
                             <p>{slide.desc}</p>
-                            <ul class="project-skills">
+                            <ul class="item-skills">
                                 {#each slide.skills as skill}
                                     <li>{skill}</li>
                                 {/each}
                             </ul>
                         </div>
-                        <div class="project-view">
+                        <div class="item-view">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 5.29289C8.68342 4.90237 9.31658 4.90237 9.70711 5.29289L16.4142 12L9.70711 18.7071C9.31658 19.0976 8.68342 19.0976 8.29289 18.7071C7.90237 18.3166 7.90237 17.6834 8.29289 17.2929L13.5858 12L8.29289 6.70711C7.90237 6.31658 7.90237 5.68342 8.29289 5.29289Z" />
                             </svg>
@@ -87,7 +87,7 @@
         gap: var(--Padding-Medium);
     }
 
-    .project {
+    .item {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -119,7 +119,7 @@
             z-index: 3;
         }
 
-        & .project-image {
+        & .item-image {
             height: 16rem;
             width: 16rem;
             border-radius: 999px;
@@ -128,7 +128,7 @@
             margin: var(--Padding-Medium) 0;
         }
 
-        & .project-main {
+        & .item-main {
             display: flex;
             min-width: 260px;
             flex-direction: row;
@@ -140,7 +140,7 @@
             gap: var(--Padding-Large);
         }
 
-        & .project-content {
+        & .item-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -151,7 +151,7 @@
             gap: var(--Padding-XSmall);
         }
 
-        & .project-skills {
+        & .item-skills {
             display: flex;
             list-style-type: none;
             align-items: flex-start;
@@ -178,7 +178,7 @@
             }
         }
 
-        & .project-view {
+        & .item-view {
             display: flex;
             flex-direction: column;
             justify-content: center;

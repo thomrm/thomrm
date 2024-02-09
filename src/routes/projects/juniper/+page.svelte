@@ -259,26 +259,6 @@
         }
     }
 
-    @keyframes -global-animate-scroll {
-        0% { transform: translate(0,-30px); opacity: 0; }
-        50% {  transform: translate(0,0); opacity: 1; }
-        100% { transform: translate(0,0); opacity: 0; }
-    }
-
-    .start-scrolling {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        margin-left: -24px;
-
-        color: var(--Sub-Text);
-
-        animation-name: animate-scroll;
-        animation-duration: 2000ms;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-    }
-
     .juniper-icon {
         display: flex;
         padding: 5rem;
@@ -363,32 +343,6 @@
             margin-top: -80px;
             object-fit: cover;
             border-radius: 999px;
-        }
-    }
-
-    .project-content {
-        display: flex;
-        width: 100vw;
-        padding: 25rem 0px;
-        flex-direction: column;
-        align-items: center;
-        gap: 25rem;
-
-        background: var(--Background-Alt);
-
-        transition: background-color 200ms;
-
-        & section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5rem;
-            padding: 0 var(--Padding-Page);
-
-            & h1, h2, h3, p {
-                max-width: 800px;
-                width: 100%;
-            }
         }
     }
 
@@ -537,5 +491,11 @@
         &:checked + .switch:after {
             left: 30px;
         }
+    }
+
+    @keyframes -global-animate-scroll {
+        0% { transform: translate(0,-30px); opacity: 0; }
+        50% {  transform: translate(0,0); opacity: 1; }
+        100% { transform: translate(0,0); opacity: 0; }
     }
 </style>

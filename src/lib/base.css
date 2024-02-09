@@ -192,3 +192,45 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         transition: all 200ms;
     }
 }
+
+:root .project-content {
+    display: flex;
+    width: 100vw;
+    padding: 25rem 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25rem;
+
+    background: var(--Background-Alt);
+
+    transition: background-color 200ms;
+
+    & section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+        padding: 0 var(--Padding-Page);
+
+        & h1, h2, h3, p {
+            max-width: 800px;
+            width: 100%;
+        }
+    }
+}
+
+:root .start-scrolling {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -24px;
+
+    color: var(--Header-Text);
+
+    animation-name: animate-scroll;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+
+    transition: color 200ms;
+}
