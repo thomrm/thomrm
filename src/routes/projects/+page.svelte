@@ -2,27 +2,9 @@
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
 	import { expoOut } from 'svelte/easing';
+    import { slides } from '../../lib/projects.js';
 
     let ready = false;
-
-    let slides = [
-        {
-            id: 1,
-            name: 'Juniper',
-            desc: 'A simple design system built in figma with clarity and accessibility in mind.',
-            skills: ['Typography', 'Iconography', 'Figma'],
-            image: '/Slide1.png',
-            url: '/projects/juniper'
-        },
-        {
-            id: 2,
-            name: 'BabyV',
-            desc: 'A custom acrylic and stainless steel case for an unconventional keyboard.',
-            skills: ['Product Design', 'Fusion 360'],
-            image: '/Slide2.png',
-            url: '/projects/babyv'
-        }
-    ]
 
     onMount(() => ready = true);
 </script>
