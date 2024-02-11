@@ -276,8 +276,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         width: 16rem;
         border-radius: 999px;
         object-fit: cover;
-
-        margin: var(--Padding-Medium) 0;
     }
 
     & .item-main {
