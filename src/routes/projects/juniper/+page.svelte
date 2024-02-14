@@ -59,7 +59,7 @@
                     <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M162 26.0146C234.419 27.0742 292.926 85.5815 293.985 158H313.914C317.256 158 319.966 155.259 319.8 151.921C315.725 69.9853 250.015 4.27538 168.079 0.200413C164.741 0.034385 162 2.7437 162 6.08615V26.0146Z" />
                     </svg>
-                    <img src="/JuniperBerries.jpg" alt="Juniper Berries" />
+                    <img src="/juniper/JuniperBerries.jpg" alt="Juniper Berries" />
                 </div>
                 <div class="juniper-colors-right small">
                     The blue-green foliage and berries of the rocky mountain juniper inspire the primary colors.

@@ -19,17 +19,17 @@
             <div class="cover-content">
                 <div class="layers-contain">
                     <div class="huge">V</div>
-                    <img alt="layer 10" src="/layer10.png" in:fly={{ duration: 1000, delay: 2800, y: '100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 1" src="/layer01.png" in:fly={{ duration: 1000, delay: 1200, y: '100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 2" src="/layer02.png" in:fly={{ duration: 1000, delay: 800, y: '100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 3" src="/layer03.png" in:fly={{ duration: 1000, delay: 600, y: '100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 4" src="/layer04.png" in:fly={{ duration: 1000, delay: 400, y: '100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 5" src="/layer05.png" in:fly={{ duration: 1000, delay: 200, y: 0, opacity: 0, easing: cubicOut }}/>
-                    <img alt="layer 6" src="/layer06.png" in:fly={{ duration: 1000, delay: 1600, y: '-100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 7" src="/layer07.png" in:fly={{ duration: 1000, delay: 1800, y: '-100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 8" src="/layer08.png" in:fly={{ duration: 1000, delay: 2000, y: '-100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 9" src="/layer09.png" in:fly={{ duration: 1000, delay: 2800, y: '-100vh', opacity: 1, easing: cubicOut }}/>
-                    <img alt="layer 11" src="/layer11.png" in:fade={{ duration: 0, delay: 3200 }}/>
+                    <img alt="layer 10" src="/babyv/layer10.png" in:fly={{ duration: 1000, delay: 2800, y: '100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 1" src="/babyv/layer01.png" in:fly={{ duration: 1000, delay: 1200, y: '100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 2" src="/babyv/layer02.png" in:fly={{ duration: 1000, delay: 800, y: '100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 3" src="/babyv/layer03.png" in:fly={{ duration: 1000, delay: 600, y: '100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 4" src="/babyv/layer04.png" in:fly={{ duration: 1000, delay: 400, y: '100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 5" src="/babyv/layer05.png" in:fly={{ duration: 1000, delay: 200, y: 0, opacity: 0, easing: cubicOut }}/>
+                    <img alt="layer 6" src="/babyv/layer06.png" in:fly={{ duration: 1000, delay: 1600, y: '-100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 7" src="/babyv/layer07.png" in:fly={{ duration: 1000, delay: 1800, y: '-100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 8" src="/babyv/layer08.png" in:fly={{ duration: 1000, delay: 2000, y: '-100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 9" src="/babyv/layer09.png" in:fly={{ duration: 1000, delay: 2800, y: '-100vh', opacity: 1, easing: cubicOut }}/>
+                    <img alt="layer 11" src="/babyv/layer11.png" in:fade={{ duration: 0, delay: 3200 }}/>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" class="start-scrolling" in:fade={{delay: 4600, duration: 200}}>
