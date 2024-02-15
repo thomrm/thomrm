@@ -87,7 +87,7 @@
                 </a>
             </nav>
 
-            <button class="page-nav--menu" aria-label="Navigation Menu" on:click={toggleNav}>
+            <button class="page-nav--menu" class:open={nav} aria-label="Navigation Menu" on:click={toggleNav}>
                 {#if !nav}
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C3.44772 6 3 6.44772 3 7C3 7.55229 3.44772 8 4 8L20 8C20.5523 8 21 7.55229 21 7C21 6.44772 20.5523 6 20 6L4 6ZM3 12C3 11.4477 3.44771 11 4 11L20 11C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13L4 13C3.44771 13 3 12.5523 3 12ZM3 17C3 16.4477 3.44772 16 4 16L20 16C20.5523 16 21 16.4477 21 17C21 17.5523 20.5523 18 20 18L4 18C3.44772 18 3 17.5523 3 17Z" />
@@ -260,6 +260,7 @@
         display: none;
         width: 80px;
         height: 80px;
+        padding: 0;
         position: fixed;
         top: var(--Padding-Page);
         right: var(--Padding-Page);
@@ -267,18 +268,35 @@
         cursor: pointer;
         justify-content: center;
         align-items: center;
+        outline-color: transparent;
+        outline-width: 3px;
+        outline-style: solid;
         border-radius: 999px;
         z-index: 5;
 
         background: var(--Background-Primary);
         color: var(--Primary-Color);
 
-        transition: background-color 200ms, color 200ms;
+        transition: background-color 200ms, color 200ms, outline-color 200ms, outline-offset 200ms;
 
         & svg {
             position: absolute;
             left: 50%-16px;
             top: 50%-16px;
+        }
+
+        &:focus-visible {
+            outline-width: 3px;
+            outline-offset: 3px;
+            outline-style: solid;
+
+            outline-color: var(--Primary-Color);
+
+            padding: 0 var(--Padding-Medium);
+        }
+
+        &.open:focus-visible {
+            outline-color: var(--Color-Overlay);
         }
 
         &:hover {
@@ -295,17 +313,18 @@
         right: 0;
         left: 0;
         z-index: 4;
-        background-color: var(--Primary-Color);
         background-image: url('/Map-Light.svg');
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
         font-size: 14px;
-        gap: var(--Padding-Medium);
-
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-end;
+
+        background-color: var(--Primary-Color);
+
+        gap: var(--Padding-Medium);
         padding: 180px var(--Padding-Page) var(--Padding-Page);
 
         &::before {
@@ -315,21 +334,34 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--Primary-Color);
             opacity: 0.75;
             z-index: -1;
+
+            background: var(--Primary-Color);
         }
 
         & a {
             font-size: 5rem;
             text-decoration: none;
             font-weight: 700;
+            border-radius: 999px;
+
             color: var(--Color-Overlay);
 
-            transition: padding 200ms;
+            transition: padding 200ms, outline 200ms;
 
             &:hover {
                 padding-right: var(--Padding-Medium);
+            }
+
+            &:focus-visible {
+                outline-width: 3px;
+                outline-offset: 10px;
+                outline-style: solid;
+
+                outline-color: var(--Color-Overlay);
+
+                padding: 0 var(--Padding-Medium);
             }
         }
     }
