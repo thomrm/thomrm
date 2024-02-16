@@ -38,6 +38,9 @@
 <style>
     .page-about {
         display: flex;
+        position: absolute;
+        top: 0;
+        height: 100vh;
         max-width: 1300px;
         flex-direction: column;
         justify-content: center;
@@ -73,7 +76,6 @@
 
     .pin-contain {
         display: flex;
-        padding: 26px 0px;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
@@ -111,6 +113,7 @@
         align-items: center;
         align-self: stretch;
 
+        padding: var(--Padding-Medium) 0;
         gap: var(--Padding-Small);
 
         & h1 {
