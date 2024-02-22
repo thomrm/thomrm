@@ -69,6 +69,7 @@
         align-self: stretch;
         flex-wrap: wrap;
 
+        margin-top: var(--Padding-Nav);
         padding: 0px var(--Padding-Page);
         gap: var(--Padding-Medium);
     }

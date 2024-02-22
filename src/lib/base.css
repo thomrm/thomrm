@@ -13,7 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     --Padding-Small: 10px;
     --Padding-XSmall: 5px;
     --Padding-Inner: 100px;
-    --Padding-Nav: -180px;
+    --Padding-Nav: 180px;
     font-size: 10px;
 }
 
@@ -32,7 +32,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media screen and (max-width: 479px) {
     :root {
-        --Padding-Nav: -120px;
+        --Padding-Nav: 120px;
         --Padding-Page: 20px;
     }
 }
@@ -42,11 +42,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-weight: 400;
     font-size: 1.8rem;
 
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-
-    transition: background-color 200ms, background-image 200ms;
+    transition: background-color 200ms;
 }
 
 :root h1 {

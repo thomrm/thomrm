@@ -267,7 +267,6 @@
         display: flex;
         width: 100vw;
         height: 100vh;
-        margin-top: var(--Padding-Nav);
 
         & .cover-content {
             display: flex;

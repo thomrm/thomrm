@@ -50,6 +50,7 @@
         flex: 1 0 0;
         align-self: stretch;
 
+        margin-top: var(--Padding-Nav);
         padding: 0px var(--Padding-Page);
         gap: var(--Padding-XLarge);
     }
