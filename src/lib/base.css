@@ -256,7 +256,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     transition: outline-color 200ms, outline-offset 200ms, background-color 200ms, color 200ms, transform 200ms, border 200ms;
 
     &.with-border {
-        border: 2px solid var(--Border);
+        border: 2px solid var(--Primary-Color);
     }
 
     &:hover {
