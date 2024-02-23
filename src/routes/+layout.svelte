@@ -26,6 +26,7 @@
       <style>
          body { 
             background-color: #EEEEEE;
+            background-image: url('/Map-Light.svg');
         }
       </style>
    {/if}
@@ -33,6 +34,7 @@
       <style>
          body {
             background-color: #111111;
+            background-image: url('/Map-Dark.svg');
         }
       </style>
    {/if}
@@ -158,37 +160,13 @@
 
         transition: color 200ms;
 
-        &::before {
-            content: '';
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-
-            background-position: center;
-            background-size: cover;
-
-            transition: background-image 200ms
-        }
-
         &.light {
-            &::before {
-                background-image: url('/Map-Light.svg');
-            }
-
             & .page-nav--vertical {
                 background-image: url('/Map-Light.svg');
             }
         }
 
         &.dark {
-            &::before {
-                background-image: url('/Map-Dark.svg');
-            }
-
             & .page-nav--vertical {
                 background-image: url('/Map-Dark.svg');
             }

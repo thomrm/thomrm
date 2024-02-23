@@ -42,7 +42,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-weight: 400;
     font-size: 1.8rem;
 
-    transition: background-color 200ms;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    transition: background-color 200ms, background-image 200ms;
 }
 
 :root h1 {
