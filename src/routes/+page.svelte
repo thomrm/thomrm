@@ -79,6 +79,8 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
+        position: fixed;
+        z-index: -1;
 
         & .pin {
             fill: var(--Primary-Color);

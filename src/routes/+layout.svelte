@@ -419,8 +419,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex: 1 0 0;
         align-self: stretch;
+        min-height: 100vh;
     }
 
     .page-footer {

@@ -80,7 +80,6 @@
         flex-direction: column;
         align-items: flex-start;
         flex: 1 0 0;
-        align-self: stretch;
         border-radius: 1.2rem;
 
         padding: var(--Padding-XLarge);
