@@ -43,13 +43,16 @@
 <style>
     .page-contact {
         display: flex;
+        position: absolute;
+        top: 0;
+        height: 100vh;
         max-width: 1300px;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         flex: 1 0 0;
         align-self: stretch;
-        
+
         padding: 0px var(--Padding-Page);
         gap: var(--Padding-XLarge);
     }
@@ -59,6 +62,8 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;
+        align-items: center;
+        text-align: center;
 
         gap: var(--Padding-Small);
     }

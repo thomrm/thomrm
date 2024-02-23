@@ -13,6 +13,8 @@
     let dark = false;
     let nav = false;
     let ready = false;
+    let y = 0;
+    let h = 0;
 
     function toggleNav() {
         nav = !nav;
@@ -20,6 +22,8 @@
 
     onMount(() => ready = true);
 </script>
+
+<svelte:window bind:scrollY="{y}" bind:innerHeight="{h}" />
 
 <svelte:head>
    {#if !dark}
@@ -42,7 +46,7 @@
 
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
-        <div class="page-header" in:fade={{delay: 200, duration: 200}}>
+        <div class="page-header" in:fade={{delay: 200, duration: 200}} class:small={y > h}>
             <a href="/" aria-label="Navigate Home" class="page-mark" title="Home">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
                     <rect width="128" height="128" rx="64" fill="black"/>
@@ -151,9 +155,11 @@
 <style>
     .app-wrapper {
         min-height: 100vh;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
         overflow: hidden;
 
         color: var(--Body-Text);
@@ -197,6 +203,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         align-self: stretch;
         position: fixed;
         top: 0;
@@ -206,6 +213,13 @@
 
         padding: var(--Padding-Page);
         gap: var(--Padding-Large);
+
+        transition: padding 200ms, background-color 200ms;
+
+        &.small {
+            padding: var(--Padding-Medium) var(--Padding-Page);
+            background-color: var(--Background-Alt);
+        }
     }
 
     .page-nav {
@@ -282,9 +296,6 @@
         width: 80px;
         height: 80px;
         padding: 0;
-        position: fixed;
-        top: var(--Padding-Page);
-        right: var(--Padding-Page);
         border: none;
         cursor: pointer;
         justify-content: center;
@@ -335,9 +346,11 @@
         left: 0;
         z-index: 4;
         background-image: url('/Map-Light.svg');
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;
+
+        background-position: top;
+        background-size: auto 100vh;
+        background-repeat: no-repeat;
+
         font-size: 14px;
         flex-direction: column;
         justify-content: flex-start;
@@ -398,7 +411,7 @@
         align-items: center;
         justify-content: center;
         align-self: stretch;
-        min-height: 100vh;
+        flex: 1 0 0;
     }
 
     .page-footer {

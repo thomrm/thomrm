@@ -79,6 +79,7 @@
         min-width: 240px;
         flex-direction: column;
         align-items: flex-start;
+        align-self: stretch;
         flex: 1 0 0;
         border-radius: 1.2rem;
 

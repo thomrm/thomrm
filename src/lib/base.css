@@ -42,9 +42,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-weight: 400;
     font-size: 1.8rem;
 
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-position: top;
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
 
     transition: background-color 200ms, background-image 200ms;
 }
