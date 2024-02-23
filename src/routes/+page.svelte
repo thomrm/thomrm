@@ -1,9 +1,8 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount, afterUpdate } from 'svelte';
     import { fade, fly, scale } from 'svelte/transition';
 	import { expoOut } from 'svelte/easing';
 
-    let pinOp = 100;
     let pinStart = 20;
     let pinEnd = 60;
 
@@ -13,10 +12,6 @@
 
     onMount(() => {
         ready = true;
-        
-		window.onscroll = () => {
-            pinOp = y > pinEnd ? 0 : y < pinStart ? 100 : 100 - ((y - pinStart) * (100 / (pinEnd - pinStart)));
-		}
 	})
 </script>
 
@@ -30,7 +25,7 @@
 {#if ready}
     <div class="page-about">
         <div class="about__top">
-            <div class="pin-contain" style="--pin-o:{pinOp / 100};">
+            <div class="pin-contain" style="--pin-o:{(y > pinEnd ? 0 : y < pinStart ? 100 : 100 - ((y - pinStart) * (100 / (pinEnd - pinStart)))) / 100};">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="95" viewBox="0 0 64 95" class="pin" transition:fly={{ duration: 1000, delay: 500, y: -150, opacity: 0, easing: expoOut }}>
                     <path d="M26.5567 85.3958C17.4229 74.405 -3.8147e-06 54.8743 0 32C3.8147e-06 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32C64 54.8743 46.5771 74.405 37.4433 85.3958C36.0005 87.132 34.0002 88 32 88C29.9997 88 27.9995 87.132 26.5567 85.3958Z" />
                     <circle cx="32" cy="32" r="16" fill="white"/>
