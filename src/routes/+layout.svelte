@@ -10,7 +10,7 @@
  
     inject({ mode: dev ? 'development' : 'production' });
 
-    let dark = false;
+    let dark;
     let nav = false;
     let ready = false;
     let y = 0;
@@ -20,28 +20,29 @@
         nav = !nav;
     }
 
-    onMount(() => ready = true);
+    onMount(() => {
+        dark = localStorage.theme === 'dark' ? true : false;
+        ready = true;
+    });
+
+    function switchTheme() {
+        localStorage.setItem('theme', !dark ? 'dark' : 'light');
+    }
 </script>
 
 <svelte:window bind:scrollY="{y}" bind:innerHeight="{h}" />
 
 <svelte:head>
-   {#if !dark}
-      <style>
-         body { 
-            background-color: #EEEEEE;
-            background-image: url('/Map-Light.svg');
-        }
-      </style>
-   {/if}
-   {#if dark}
-      <style>
-         body {
-            background-color: #111111;
-            background-image: url('/Map-Dark.svg');
-        }
-      </style>
-   {/if}
+    {#if dark == false}
+        <style>
+            body { background-color: #EEEEEE; }
+        </style>
+    {/if}
+    {#if dark == true}
+        <style>
+            body { background-color: #111111; }
+        </style>
+    {/if}
 </svelte:head>	
 
 {#if ready}
@@ -119,7 +120,7 @@
         </div>
         
         <footer class="page-footer" in:fade={{delay: 200, duration: 200}}>
-            <input type="checkbox" id="theme-switch" bind:checked={dark}/>
+            <input type="checkbox" id="theme-switch" bind:checked={dark} on:click={switchTheme}/>
             <label for="theme-switch" class="switch">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <mask id="path-1-inside-1_51_3153" fill="white">
@@ -162,17 +163,26 @@
         justify-content: space-between;
         overflow: hidden;
 
+        background-position: top;
+        background-size: auto 100vh;
+        background-repeat: no-repeat;
+
+        background-color: var(--Background-Base);
         color: var(--Body-Text);
 
-        transition: color 200ms;
+        transition: color 200ms, background-color 200ms, background-image 200ms;
 
         &.light {
+            background-image: url('/Map-Light.svg');
+
             & .page-nav--vertical {
                 background-image: url('/Map-Light.svg');
             }
         }
 
         &.dark {
+            background-image: url('/Map-Dark.svg');
+
             & .page-nav--vertical {
                 background-image: url('/Map-Dark.svg');
             }
