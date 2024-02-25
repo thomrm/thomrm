@@ -14,6 +14,7 @@
     let nav = false;
     let ready = false;
     let y = 0;
+    let w = 0;
 
     function toggleNav() {
         nav = !nav;
@@ -29,7 +30,7 @@
     }
 </script>
 
-<svelte:window bind:scrollY="{y}" />
+<svelte:window bind:scrollY="{y}" bind:innerWidth="{w}"/>
 
 <svelte:head>
     {#if dark == false}
@@ -51,7 +52,7 @@
 
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
-        <div class="page-header" in:fade={{delay: 200, duration: 200}} style="height: {y > 30 ? 120 : y <= 0 ? 180 : 180 - (y * 2)}px;">
+        <div class="page-header" in:fade={{delay: 200, duration: 200}} style="height: {w <= 479 ? 120 : w <= 768 ? 180 : y > 30 ? 120 : y <= 0 ? 180 : 180 - (y * 2)}px;">
             <a href="/" aria-label="Navigate Home" class="page-mark" title="Home">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
                     <rect width="128" height="128" rx="64" fill="black"/>
@@ -409,6 +410,10 @@
     }
 
     @media screen and (max-width: 992px) {
+        .page-nav .icon-contain { display: none; }
+    }
+
+    @media screen and (max-width: 768px) {
         .page-nav { display: none; }
         .page-nav--menu { display: flex; }
         .page-nav--vertical { display: flex; }
