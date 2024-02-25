@@ -304,8 +304,8 @@
 
     .page-nav--menu {
         display: none;
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         padding: 0;
         border: none;
         cursor: pointer;
@@ -324,8 +324,6 @@
 
         & svg {
             position: absolute;
-            left: 50%-16px;
-            top: 50%-16px;
         }
 
         &:focus-visible {

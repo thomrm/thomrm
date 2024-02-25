@@ -71,7 +71,6 @@
     .contact__buttons {
         display: flex;
         align-items: flex-start;
-        max-width: 80vw;
         justify-content: center;
         flex-wrap: wrap;
         
