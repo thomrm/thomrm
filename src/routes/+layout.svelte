@@ -14,7 +14,6 @@
     let nav = false;
     let ready = false;
     let y = 0;
-    let h = 0;
 
     function toggleNav() {
         nav = !nav;
@@ -30,7 +29,7 @@
     }
 </script>
 
-<svelte:window bind:scrollY="{y}" bind:innerHeight="{h}" />
+<svelte:window bind:scrollY="{y}" />
 
 <svelte:head>
     {#if dark == false}
@@ -52,7 +51,7 @@
 
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
-        <div class="page-header" in:fade={{delay: 200, duration: 200}} class:small={y > h}>
+        <div class="page-header" in:fade={{delay: 200, duration: 200}} style="height: {y > 30 ? 120 : y <= 0 ? 180 : 180 - (y * 2)}px;">
             <a href="/" aria-label="Navigate Home" class="page-mark" title="Home">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 128 128" fill="none">
                     <rect width="128" height="128" rx="64" fill="black"/>
@@ -95,6 +94,7 @@
                     </div>
                     <span>Contact</span>
                 </a>
+                <div class="page-header-background" style="opacity: {y > 60 ? 1 : y > 30 ? 0 + (((y - 30) * (100 / 30)) / 100) : 0};"></div>
             </nav>
 
             <button class="page-nav--menu" class:open={nav} aria-label="Navigation Menu" on:click={toggleNav}>
@@ -222,19 +222,27 @@
         justify-content: space-between;
         align-self: stretch;
         position: fixed;
+        height: 180px;
         top: 0;
         left: 0;
         right: 0;
         z-index: 2;
 
-        padding: var(--Padding-Page);
+        padding: 0 var(--Padding-Page);
         gap: var(--Padding-Large);
 
-        transition: padding 200ms, background-color 200ms;
+        & .page-header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0;
 
-        &.small {
-            padding: var(--Padding-Medium) var(--Padding-Page);
             background-color: var(--Background-Alt);
+
+            transition: background-color 200ms;
         }
     }
 

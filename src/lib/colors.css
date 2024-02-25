@@ -10,6 +10,7 @@
     --Color-Overlay: #FFFFFF;
     --Background-Base: #EEEEEE;
     --Background-Alt: #FFFFFF;
+    --Background-Header: 255, 255, 255;
     --Border: #DDDDDD;
     --Divider: #EEEEEE;
     --Shadow: #00000025;
@@ -27,6 +28,7 @@
     --Color-Overlay: #000000;
     --Background-Base: #111111;
     --Background-Alt: #222222;
+    --Background-Header: 34, 34, 34;
     --Border: #222222;
     --Divider: #111111;
     --Shadow: #000000cc;
