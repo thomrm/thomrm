@@ -268,11 +268,6 @@
                 outline-offset: 3px;
                 outline-style: solid;
             }
-
-            &:hover {
-                outline-color: var(--Border);
-                outline-offset: 0px;
-            }
         }
 
         & .icon-contain {
@@ -340,11 +335,6 @@
         &.open:focus-visible {
             outline-color: var(--Color-Overlay);
         }
-
-        &:hover {
-            background: var(--Primary-Color);
-            color: var(--Color-Overlay);
-        }
     }
 
     .page-nav--vertical {
@@ -393,10 +383,6 @@
             color: var(--Color-Overlay);
 
             transition: padding 200ms, outline 200ms;
-
-            &:hover {
-                padding-right: var(--Padding-Medium);
-            }
 
             &:focus-visible {
                 outline-width: 3px;
@@ -482,6 +468,22 @@
 
         &:checked + .switch:after {
             left: 30px;
+        }
+    }
+
+    @media (hover: hover) {
+        .page-nav a:hover {
+            outline-color: var(--Border);
+            outline-offset: 0px;
+        }
+
+        .page-nav--menu:hover {
+            background: var(--Primary-Color);
+            color: var(--Color-Overlay);
+        }
+
+        .page-nav--vertical a:hover {
+            padding-right: var(--Padding-Medium);
         }
     }
 </style>

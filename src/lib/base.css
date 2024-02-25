@@ -147,11 +147,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         outline-style: solid;
         z-index: 3;
     }
-
-    &:hover {
-        background-color: var(--Primary-Color);
-        color: var(--Color-Overlay);
-    }
 }
 
 :root .switch {
@@ -253,10 +248,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         border: 2px solid var(--Primary-Color);
     }
 
-    &:hover {
-        transform: scale(1.01);
-    }
-
     &:focus-visible {
         outline-color: var(--Primary-Color);
         outline-width: 3px;
@@ -332,5 +323,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         color: var(--Sub-Text);
 
         transition: color 200ms;
+    }
+}
+
+@media (hover: hover) {
+    :root .button:hover {
+        background-color: var(--Primary-Color);
+        color: var(--Color-Overlay);
+    }
+
+    :root .project-item:hover {
+        transform: scale(1.01);
     }
 }
