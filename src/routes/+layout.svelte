@@ -477,6 +477,10 @@
             outline-offset: 0px;
         }
 
+        .page-nav a:hover[aria-current='true'] {
+            outline-color: var(--Primary-Color);
+        }
+
         .page-nav--menu:hover {
             background: var(--Primary-Color);
             color: var(--Color-Overlay);
