@@ -70,7 +70,7 @@
         flex-wrap: wrap;
 
         margin-top: var(--Padding-Nav);
-        padding: 0px var(--Padding-Page);
+        padding: 0px var(--Padding-Page) var(--Padding-Page);
         gap: var(--Padding-Medium);
     }
 

@@ -43,6 +43,11 @@
             body { background-color: #111111; }
         </style>
     {/if}
+    {#if nav}
+        <style>
+            body { overflow: hidden; }
+        </style>
+    {/if}
 </svelte:head>	
 
 {#if ready}
@@ -94,12 +99,12 @@
 
             <button class="page-nav--menu" class:open={nav} aria-label="Navigation Menu" on:click={toggleNav}>
                 {#if !nav}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C3.44772 6 3 6.44772 3 7C3 7.55229 3.44772 8 4 8L20 8C20.5523 8 21 7.55229 21 7C21 6.44772 20.5523 6 20 6L4 6ZM3 12C3 11.4477 3.44771 11 4 11L20 11C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13L4 13C3.44771 13 3 12.5523 3 12ZM3 17C3 16.4477 3.44772 16 4 16L20 16C20.5523 16 21 16.4477 21 17C21 17.5523 20.5523 18 20 18L4 18C3.44772 18 3 17.5523 3 17Z" />
                     </svg>
                 {/if}
                 {#if nav}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" in:fade={{delay: 200, duration: 200}} out:fade={{duration: 200}}>
                         <path d="M7.05025 5.63604C6.65973 5.24551 6.02656 5.24551 5.63604 5.63604C5.24552 6.02656 5.24552 6.65973 5.63604 7.05025L10.5858 12L5.63604 16.9497C5.24552 17.3403 5.24552 17.9734 5.63604 18.364C6.02656 18.7545 6.65973 18.7545 7.05025 18.364L12 13.4142L16.9497 18.364C17.3403 18.7545 17.9734 18.7545 18.364 18.364C18.7545 17.9734 18.7545 17.3403 18.364 16.9497L13.4142 12L18.364 7.05025C18.7545 6.65973 18.7545 6.02656 18.364 5.63604C17.9734 5.24552 17.3403 5.24552 16.9497 5.63604L12 10.5858L7.05025 5.63604Z" />
                     </svg>
                 {/if}
@@ -198,6 +203,7 @@
         outline-width: 3px;
         outline-style: solid;
         border-radius: 999px;
+        z-index: 5;
         
         transition: outline-color 200ms, outline-offset 200ms;
 
@@ -298,8 +304,8 @@
 
     .page-nav--menu {
         display: none;
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         padding: 0;
         border: none;
         cursor: pointer;
@@ -368,7 +374,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            opacity: 0.75;
+            opacity: 0.9;
             z-index: -1;
 
             background: var(--Primary-Color);
@@ -407,7 +413,7 @@
         align-items: center;
         justify-content: center;
         align-self: stretch;
-        flex: 1 0 0;
+        min-height: 100vh;
     }
 
     .page-footer {
@@ -479,11 +485,6 @@
 
         .page-nav a:hover[aria-current='true'] {
             outline-color: var(--Primary-Color);
-        }
-
-        .page-nav--menu:hover {
-            background: var(--Primary-Color);
-            color: var(--Color-Overlay);
         }
 
         .page-nav--vertical a:hover {
