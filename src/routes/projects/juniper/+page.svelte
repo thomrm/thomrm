@@ -33,7 +33,7 @@
         </div>
         <div class="project-content">
             <section>
-                <h1>No one gets it right on the first try.</h1>
+                <h1>No one gets it right on the <br />first try.</h1>
                 <p>When I started to redesign my personal portfolio, I wanted to approach it as I would any other project. Consistency and ease of iteration has always been an important part of my design process. Making it easier to revise and change reduces the eventual friction and frustrations. Juniper is the design system that I built to help with this.</p>
             </section>
             <div class="juniper-colors-contain">
@@ -232,13 +232,13 @@
             </section>
             <section>
                 <div class="sub-header">Keep Reading</div>
-                <a href="{slides[1].url}" class="project-item with-border">
+                <a href="{slides[2].url}" class="project-item with-border">
                     <div class="item-main">
                         <div class="item-content">
-                            <h2>{slides[1].name}</h2>
-                            <p>{slides[1].desc}</p>
+                            <h2>{slides[2].name}</h2>
+                            <p>{slides[2].desc}</p>
                             <ul class="item-skills">
-                                {#each slides[1].skills as skill}
+                                {#each slides[2].skills as skill}
                                     <li>{skill}</li>
                                 {/each}
                             </ul>

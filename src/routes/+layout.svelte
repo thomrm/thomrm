@@ -264,7 +264,7 @@
             align-items: center;
             background-clip: padding-box;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             border-radius: 999px;
             outline-color: transparent;
             outline-width: 3px;

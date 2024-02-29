@@ -45,7 +45,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root h1 {
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 6rem;
     line-height: 1;
     letter-spacing: -0.04em;
     color: var(--Header-Text);
@@ -54,17 +54,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root h2 {
     font-weight: 700;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1.2;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+    letter-spacing: -0.03em;
     color: var(--Header-Text);
     transition: color 200ms;
 }
 
 :root h3, .sub-header {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 1.5;
     letter-spacing: -0.02em;
     color: var(--Sub-Text);
@@ -73,7 +72,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root p {
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     color: var(--Body-Text);
     transition: color 200ms;
@@ -85,7 +84,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 :root .small {
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.5;
     color: var(--Sub-Text);
     transition: color 200ms;
