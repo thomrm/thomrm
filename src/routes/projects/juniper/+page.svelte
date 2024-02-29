@@ -111,30 +111,30 @@
                                 <div class="color color-1">
                                     <div class="label light">
                                         <p class="label-header">#FFFFFF</p>
-                                        <p class="xsmall">Contrast 18.88</p>
+                                        <p class="xsmall">Contrast 21.00</p>
                                     </div>
                                 </div>
                                 <div class="color color-2">
                                     <div class="label light">
                                         <p class="label-header">#DDDDDD</p>
-                                        <p class="xsmall">Contrast 13.90</p>
+                                        <p class="xsmall">Contrast 15.46</p>
                                     </div>
                                 </div>
                                 <div class="color color-3">
                                     <div class="label light">
                                         <p class="label-header">#BBBBBB</p>
-                                        <p class="xsmall">Contrast 9.84</p>
+                                        <p class="xsmall">Contrast 10.94</p>
                                     </div>
                                 </div>
                                 <div class="color color-4">
                                     <div class="label light">
                                         <p class="label-header">#00C396</p>
-                                        <p class="xsmall">Contrast 8.31</p>
+                                        <p class="xsmall">Contrast 9.25</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="base-color">
-                                <p class="label-header">#111111</p>
+                                <p class="label-header">#000000</p>
                                 <p class="xsmall">Base Color</p>
                             </div>
                         </div>

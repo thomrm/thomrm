@@ -40,7 +40,7 @@
     {/if}
     {#if dark == true}
         <style>
-            body { background-color: #111111; }
+            body { background-color: #000000; }
         </style>
     {/if}
     {#if nav}
@@ -193,6 +193,10 @@
             & .page-nav--vertical {
                 background-image: url('/Map-Dark.svg');
             }
+
+            & .page-mark {
+                box-shadow: 0 0 0 1px var(--Background-Primary);
+            }
             
         }
     }
@@ -207,7 +211,7 @@
         border-radius: 999px;
         z-index: 5;
         
-        transition: outline-color 200ms, outline-offset 200ms;
+        transition: outline-color 200ms, outline-offset 200ms, box-shadow 200ms;
 
         &:focus-visible {
             outline-color: var(--Primary-Color);

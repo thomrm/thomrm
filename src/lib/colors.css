@@ -10,10 +10,9 @@
     --Color-Overlay: #FFFFFF;
     --Background-Base: #EEEEEE;
     --Background-Alt: #FFFFFF;
-    --Background-Header: 255, 255, 255;
     --Border: #DDDDDD;
     --Divider: #EEEEEE;
-    --Shadow: #00000025;
+    --Shadow: #CCCCCC;
 }
 
 .dark {
@@ -21,15 +20,14 @@
     --Black: #000000;
 
     --Primary-Color: #00C396;
-    --Background-Primary: #000000;
+    --Background-Primary: #111111;
     --Header-Text: #FFFFFF;
     --Body-Text: #DDDDDD;
     --Sub-Text: #BBBBBB;
-    --Color-Overlay: #000000;
-    --Background-Base: #111111;
-    --Background-Alt: #222222;
-    --Background-Header: 34, 34, 34;
+    --Color-Overlay: #111111;
+    --Background-Base: #000000;
+    --Background-Alt: #111111;
     --Border: #222222;
     --Divider: #111111;
-    --Shadow: #000000cc;
+    --Shadow: #222222;
 }
