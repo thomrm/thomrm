@@ -228,7 +228,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    align-self: stretch;
+    flex-direction: column;
     border-radius: 12px;
     overflow: hidden;
     text-decoration: none;
@@ -256,15 +256,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     & .item-image {
-        height: 16rem;
-        width: 16rem;
+        height: 12rem;
+        width: 12rem;
         border-radius: 999px;
         object-fit: cover;
+        margin: var(--Padding-Medium);
     }
 
     & .item-main {
         display: flex;
-        min-width: 260px;
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -277,12 +277,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     & .item-content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
         flex: 1 0 0;
         align-self: stretch;
 
-        gap: var(--Padding-XSmall);
+        gap: var(--Padding-Small);
     }
 
     & .item-skills {
@@ -292,7 +292,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         flex-wrap: wrap;
 
         gap: var(--Padding-XSmall);
-        padding: var(--Padding-Small) 0;
+        padding: var(--Padding-Small) 0 0;
 
         & li {
             display: flex;
@@ -332,6 +332,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     }
 
     :root .project-item:hover {
-        transform: scale(1.01);
+        transform: scale(1.03);
     }
 }

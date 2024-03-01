@@ -232,13 +232,13 @@
             </section>
             <section>
                 <div class="sub-header">Keep Reading</div>
-                <a href="{slides[2].url}" class="project-item with-border">
+                <a href="{slides[0].url}" class="project-item with-border">
                     <div class="item-main">
                         <div class="item-content">
-                            <h2>{slides[2].name}</h2>
-                            <p>{slides[2].desc}</p>
+                            <h2>{slides[0].name}</h2>
+                            <p>{slides[0].desc}</p>
                             <ul class="item-skills">
-                                {#each slides[2].skills as skill}
+                                {#each slides[0].skills as skill}
                                     <li>{skill}</li>
                                 {/each}
                             </ul>
