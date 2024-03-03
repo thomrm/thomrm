@@ -51,15 +51,15 @@
                 <h1>The Objectives.</h1>
                 <div class="three-col">
                     <div>
-                        <h3>For Users</h3>
+                        <div class="sub-header">For Users</div>
                         <p>Higher completion rate for users who start the report process.</p>
                     </div>
                     <div>
-                        <h3>For Specialists</h3>
+                        <div class="sub-header">For Specialists</div>
                         <p>More accuracy for reports generated for specialist review.</p>
                     </div>
                     <div>
-                        <h3>For Product/Devs</h3>
+                        <div class="sub-header">For Product/Devs</div>
                         <p>Easy expandability for report types and reasons added in the future.</p>
                     </div>
                 </div>
@@ -381,7 +381,7 @@
             padding: var(--Padding-Large);
         }
 
-        & h3 {
+        & .sub-header {
             margin-bottom: var(--Padding-Small);
         }
     }
