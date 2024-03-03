@@ -1,7 +1,8 @@
 <script>
     import { onMount } from 'svelte';
-    import { fade } from 'svelte/transition';
     import { slides } from '../../../lib/projects';
+    import { fade, fly, scale } from 'svelte/transition';
+	import { expoOut } from 'svelte/easing';
 
     let ready = false;
 
@@ -16,10 +17,28 @@
 {#if ready}
     <div class="project-contain" in:fade={{delay: 200, duration: 200}}>
         <div class="project-cover">
-            <div class="cover-content">
-                Work in Progress.
+            <div class="cover-content reports-cover">
+                <div class="report-grid">
+                    <div class="report-grid-col step1">
+                        <img class="step1a"src="/twitchreports/shape1.svg" alt="shape">
+                        <img class="step1b" src="/twitchreports/shape5.svg" alt="shape">
+                    </div>
+                    <div class="report-grid-col step2">
+                        <img class="step2a" src="/twitchreports/shape2.svg" alt="shape">
+                        <img class="step2b" src="/twitchreports/shape2.svg" alt="shape">
+                        <img class="step2c" src="/twitchreports/shape5.svg" alt="shape">
+                    </div>
+                    <div class="report-grid-col step3">
+                        <img class="step3a" src="/twitchreports/shape3.svg" alt="shape">
+                        <img class="step3b" src="/twitchreports/shape3.svg" alt="shape">
+                        <img class="step3c" src="/twitchreports/shape5.svg" alt="shape">
+                    </div>
+                    <div class="report-grid-col step4">
+                        <img src="/twitchreports/shape4.svg" alt="shape">
+                    </div>
+                </div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" class="start-scrolling" in:fade={{delay: 4600, duration: 200}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="currentColor" class="start-scrolling" in:fade={{delay: 7500, duration: 200}}>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1715 24.1717C9.39049 24.9527 9.39049 26.219 10.1715 27.0001L23.5858 40.4143L37 27.0001C37.781 26.219 37.781 24.9527 37 24.1717C36.2189 23.3906 34.9526 23.3906 34.1715 24.1717L25.5858 32.7575L25.5858 9.58588C25.5858 8.48131 24.6903 7.58588 23.5858 7.58588C22.4812 7.58588 21.5858 8.48131 21.5858 9.58588L21.5858 32.7575L13 24.1717C12.2189 23.3906 10.9526 23.3906 10.1715 24.1717Z" />
             </svg>
         </div>
@@ -110,8 +129,236 @@
             align-items: center;
             align-content: center;
             flex: 1 0 0;
+
             padding: 1 var(--Padding-Inner);
+            gap: var(--Padding-Large);
+
+            & .report-grid {
+                display: grid;
+                width: 100%;
+                max-width: 900px;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1vw;
+                align-items: end;
+
+                padding: 0 var(--Padding-Page);
+
+                & .report-grid-col {
+                    position: relative;
+                    display: flex;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+            }
         }
+    }
+
+    .step1b {
+        position: absolute;
+        top: 30%;
+        opacity: 0;
+
+        animation-name: animate-step1b-in, animate-step1b, animate-select-in;
+        animation-duration: 200ms, 1500ms, 500ms;
+        animation-delay: 1000ms, 2000ms, 1000ms;
+        animation-fill-mode: forwards, forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step1b-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes -global-animate-step1b {
+        0% { transform: translateY(0); }
+        30% {  transform: translateY(125%); }
+        70% {  transform: translateY(125%); }
+        100% { transform: translateY(0); }
+    }
+
+    .step2 {
+        opacity: 0;
+
+        animation-name: animate-step2-in, animate-step2, animate-step-in;
+        animation-duration: 200ms, 1500ms, 500ms;
+        animation-delay: 1000ms, 2000ms, 1000ms;
+        animation-fill-mode: forwards, forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step2-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes -global-animate-step2 {
+        0% { transform: translateY(0); }
+        30% {  transform: translateY(105%); }
+        70% {  transform: translateY(105%); }
+        100% { transform: translateY(0); }
+    }
+
+    .step2a {
+        transform: translateY(-105%);
+        opacity: 0;
+
+        animation-name: animate-step2a;
+        animation-duration: 1500ms;
+        animation-fill-mode: forwards;
+        animation-delay: 2000ms;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step2a {
+        0% { opacity: 0; }
+        30% {  opacity: 1; }
+        70% {  opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    .step2b {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        animation-name: animate-step2b;
+        animation-duration: 1500ms;
+        animation-fill-mode: forwards;
+        animation-delay: 2000ms;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step2b {
+        0% { opacity: 1; }
+        30% { opacity: 0; }
+        70% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .step2c {
+        position: absolute;
+        top: 46.5%;
+        opacity: 0;
+
+        animation-name: animate-step2c-in, animate-step2c, animate-select-in;
+        animation-duration: 200ms, 1500ms, 500ms;
+        animation-delay: 4000ms, 5000ms, 4000ms;
+        animation-fill-mode: forwards, forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step2c-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes -global-animate-step2c {
+        0% { transform: translateY(0); }
+        30% {  transform: translateY(125%); }
+        100% {  transform: translateY(125%); }
+    }
+
+    .step3 {
+        opacity: 0;
+
+        animation-name: animate-step3-in, animate-step3, animate-step-in;
+        animation-duration: 200ms, 1500ms, 500ms;
+        animation-delay: 4000ms, 5000ms, 4000ms;
+        animation-fill-mode: forwards, forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step3-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes -global-animate-step3 {
+        0% { transform: translateY(0); }
+        30% {  transform: translateY(105%); }
+        100% {  transform: translateY(105%); }
+    }
+
+    .step3a {
+        transform: translateY(-105%);
+        opacity: 0;
+
+        animation-name: animate-step3a;
+        animation-duration: 1500ms;
+        animation-fill-mode: forwards;
+        animation-delay: 5000ms;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step3a {
+        0% { opacity: 0; }
+        30% {  opacity: 1; }
+        100% {  opacity: 1; }
+    }
+
+    .step3b {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        animation-name: animate-step3b;
+        animation-duration: 1500ms;
+        animation-fill-mode: forwards;
+        animation-delay: 5000ms;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step3b {
+        0% { opacity: 1; }
+        30% {  opacity: 0; }
+        100% {  opacity: 0; }
+    }
+
+    .step3c {
+        position: absolute;
+        top: -38.5%;
+        opacity: 0;
+
+        animation-name: animate-step2c-in, animate-select-in;
+        animation-duration: 200ms, 500ms;
+        animation-delay: 6000ms, 6000ms;
+        animation-fill-mode: forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step2c-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .step4 {
+        opacity: 0;
+
+        animation-name: animate-step4-in, animate-step-in;
+        animation-duration: 200ms, 500ms;
+        animation-delay: 6000ms, 6000ms;
+        animation-fill-mode: forwards, none;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes -global-animate-step4-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes -global-animate-select-in {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes -global-animate-step-in {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
     }
 
     @keyframes -global-animate-scroll {
