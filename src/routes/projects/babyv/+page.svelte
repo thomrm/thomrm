@@ -63,30 +63,30 @@
             </section>
             <section>
                 <h1>The Design Process.</h1>
-                <div class="project-image"><img src="/babyv/image01.png" alt="PCB Schematic" /></div>
+                <div class="project-image"><img srcset="/babyv/image01.jpg, /babyv/image01@2x.jpg 2x" src="/babyv/image01.jpg" alt="PCB Schematic" /></div>
                 <p>Before starting on the case, I needed to get the PCB into Fusion.  I used a schematic of the default switch plate to figure out the angles and spacing of the sockets.  For the rest, a pair of calipers and a ruler.  The locations for the sockets and the USB port had to be precise.  If they weren't, the whole thing wouldn't fit together.</p>
             </section>
             <section>
-                <div class="project-image"><img src="/babyv/image02.png" alt="Top Plate Schematic" /></div>
+                <div class="project-image"><img srcset="/babyv/image02.jpg, /babyv/image02@2x.jpg 2x" src="/babyv/image02.jpg" alt="Top Plate Schematic" /></div>
                 <p>To keep the case low profile, the top plate (where you seat the switches) would serve as the top layer of the case as well.  I used the switch positions and angles from the PCB to align the cutouts.</p>
             </section>
             <section>
-                <div class="project-image"><img src="/babyv/image03.png" alt="Middle Layers" /></div>
+                <div class="project-image"><img srcset="/babyv/image03.jpg, /babyv/image03@2x.jpg 2x" src="/babyv/image03.jpg" alt="Middle Layers" /></div>
                 <p>The middle layers needed to provide enough spacing for PCB between the top and bottom plates.  Made out of the colored acrylic and staggered, they would also add visual interest.  The service I used to cut the acrylic provided several thicknesses to choose from.  I picked one that would allow for the intended design while also maintaining structural rigidity.</p>
             </section>
             <section>
-                <div class="project-image"><img src="/babyv/image04.png" alt="Bottom Plate Design" /></div>
+                <div class="project-image"><img srcset="/babyv/image04.jpg, /babyv/image04@2x.jpg 2x" src="/babyv/image04.jpg" alt="Bottom Plate Design" /></div>
                 <p>The bottom plate serves as a canvas for a bit of fun design as well as serving as a final layer of protection.  I designed a vector graphic 'V' to be cut into the metal plate, contrasting with the colored acrylic layer underneath.  A dedicated space for some small rubber feet was also left on the metal.</p>
             </section>
             <section>
-                <div class="project-image"><img src="/babyv/image05.png" alt="Fasteners Cross-Section" /></div>
+                <div class="project-image"><img srcset="/babyv/image05.jpg, /babyv/image05@2x.jpg 2x" src="/babyv/image05.jpg" alt="Fasteners Cross-Section" /></div>
                 <p>To hold the whole thing together, I used a set of threaded spacers of a length to fit inside the middle layers.  A pair of stainless steel M3 screws for each would then hold the stainless steel plates from the top and the bottom.</p>
             </section>
             <section>
                 <h1>The Final Build.</h1>
                 <p>After completing the design, I exported the plates and acrylic layers as the proper formats and sent them off for cutting.  Fasteners were ordered, and when everything finally arrived I could start assembly.  The finished product:</p>
-                <div class="project-image no-border"><img src="/babyv/image06.jpeg" alt="Finished Top View" /></div>
-                <div class="project-image no-border"><img src="/babyv/image07.jpeg" alt="Finished Bottom View" /></div>
+                <div class="project-image no-border"><img srcset="/babyv/image06.jpg, /babyv/image06@2x.jpg 2x" src="/babyv/image06.jpg" alt="Finished Top View" /></div>
+                <div class="project-image no-border"><img srcset="/babyv/image07.jpg, /babyv/image07@2x.jpg 2x" src="/babyv/image07.jpg" alt="Finished Bottom View" /></div>
             </section>
         </div>
     </div>
@@ -155,14 +155,14 @@
     .project-image {
         display: flex;
         max-width: 800px;
-        border: 1px solid var(--Border);
+        box-shadow: 0 0 0 1px var(--Border);
         border-radius: 12px;
         overflow: hidden;
 
-        transition: border-color 200ms;
+        transition: box-shadow 200ms;
 
         &.no-border {
-            border: none;
+            box-shadow: none;
         }
 
         & img {

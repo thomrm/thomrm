@@ -21,7 +21,7 @@
             {#each [...slides].reverse() as slide, i}
 
                 <a href="{slide.url}" class="project-item" in:fly|global={{ delay: (i+1)*200, duration: 1000, y: 150, opacity: 0, easing: expoOut }}>
-                    <img class="item-image" src="{slide.image}" alt="{slide.name}" />
+                    <img class="item-image" srcset="{slide.image}.jpg, {slide.image}@2x.jpg 2x" src="{slide.image}.jpg" alt="{slide.name}" />
                     <div class="item-main">
                         <div class="item-content">
                             <h2>{slide.name}</h2>
