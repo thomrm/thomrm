@@ -368,7 +368,7 @@
     }
 
     .three-col {
-        max-width: 800px;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         border-radius: 12px;
@@ -383,6 +383,14 @@
 
         & h3 {
             margin-bottom: var(--Padding-Small);
+        }
+    }
+
+
+    @media screen and (max-width: 660px) {
+        :root .project-content .three-col {
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: auto;
         }
     }
 

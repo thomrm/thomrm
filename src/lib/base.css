@@ -198,13 +198,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         flex-direction: column;
         align-items: center;
         align-self: stretch;
+        box-sizing: border-box;
         margin: 0 auto;
         width: 800px;
         gap: 5rem;
         padding: 0 var(--Padding-Page);
 
         & h1, h2, h3, p {
-            max-width: 800px;
             width: 100%;
         }
 
@@ -216,6 +216,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
             & h1 {
                 padding: 0 var(--Padding-Page);
                 box-sizing: border-box;
+                max-width: 800px;
             }
         }
     }
@@ -223,7 +224,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media screen and (max-width: 900px) {
     :root .project-content section {
-        width: auto;
+        width: 100%;
     }
 }
 
