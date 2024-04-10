@@ -14,6 +14,13 @@ const data = [
         url: '/projects/juniper'
     },
     {
+        name: 'Elder Dragon Handbook',
+        desc: 'Creating an easier Magic: The Gathering commander finder.',
+        skills: ['HTML', 'CSS', 'Svelte', 'Mobile', 'Figma'],
+        image: '/Slide4',
+        url: '/projects/edhb'
+    },
+    {
         name: 'Reporting on Twitch',
         desc: 'Redesigning the Twitch report flow for more completions and more accurate reports.',
         skills: ['E2E Process', 'Prototyping', 'Figma'],
