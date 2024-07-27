@@ -1,33 +1,24 @@
-.light {
+:root {
     --White: #FFFFFF;
     --Black: #000000;
 
-    --Primary-Color: #00645B;
-    --Background-Primary: #FFFFFF;
-    --Header-Text: #000000;
-    --Body-Text: #333333;
-    --Sub-Text: #666666;
-    --Color-Overlay: #FFFFFF;
-    --Background-Base: #EEEEEE;
-    --Background-Alt: #FFFFFF;
-    --Border: #DDDDDD;
-    --Divider: #EEEEEE;
-    --Shadow: #CCCCCC;
+    --Color-Overlay: #969696;
+    --Color-Overlay-Dark: #353535;
+    --Color-Object: #151515;
+
+    --Color-Green: #8DB99C;
+    --Color-Orange: #FF947C;
+    --Color-Red: #E0446A;
+}
+
+.light {
+    --Color-Base: #FFFFFF;
+    --Color-Primary: #151515;
+    --Color-Secondary: #353535;
 }
 
 .dark {
-    --White: #FFFFFF;
-    --Black: #000000;
-
-    --Primary-Color: #00C396;
-    --Background-Primary: #111111;
-    --Header-Text: #FFFFFF;
-    --Body-Text: #DDDDDD;
-    --Sub-Text: #BBBBBB;
-    --Color-Overlay: #111111;
-    --Background-Base: #000000;
-    --Background-Alt: #111111;
-    --Border: #222222;
-    --Divider: #111111;
-    --Shadow: #222222;
+    --Color-Base: #000000;
+    --Color-Primary: #FFFFFF;
+    --Color-Secondary: #999999;
 }

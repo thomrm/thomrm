@@ -1,7 +1,6 @@
 <script>
-    import { onMount, afterUpdate } from 'svelte';
-    import { fade, fly, scale } from 'svelte/transition';
-	import { expoOut } from 'svelte/easing';
+    import { onMount } from 'svelte';
+    import { work } from '../lib/projects.js';
 
     let ready = false;
 
@@ -9,123 +8,110 @@
 </script>
 
 <svelte:head>
-	<title>Thomas Reed-Munoz. Product and Visual Design in NYC.</title>
-    <meta name="description" content="Personal portfolio for product and visual designer, Thomas Reed-Munoz.">
+	<title>Thomas Reed-Munoz. Product and Visual Design.</title>
+    <meta name="description" content="Personal portfolio for Thomas Reed-Munoz.">
 </svelte:head>
 
 {#if ready}
-    <div class="page-about">
-        <div class="about__top">
-            <div class="pin-contain">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="95" viewBox="0 0 64 95" class="pin" transition:fly={{ duration: 1000, delay: 500, y: -150, opacity: 0, easing: expoOut }}>
-                    <path d="M26.5567 85.3958C17.4229 74.405 -3.8147e-06 54.8743 0 32C3.8147e-06 14.3269 14.3269 0 32 0C49.6731 0 64 14.3269 64 32C64 54.8743 46.5771 74.405 37.4433 85.3958C36.0005 87.132 34.0002 88 32 88C29.9997 88 27.9995 87.132 26.5567 85.3958Z" />
-                    <circle cx="32" cy="32" r="16" fill="white"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="12" viewBox="0 0 64 12" class="shadow" transition:scale={{ duration: 1000, delay: 500, opacity: 0, start: 0, easing: expoOut }}>
-                    <ellipse cx="32" cy="6" rx="18" ry="6" />
-                </svg>
-            </div>
-        </div>
-        <div class="about__bottom">
-            <div class="about__header" in:fade={{delay: 200, duration: 200}}>
-                <h1>Thomas Reed&#x2011;Mu&ntilde;oz</h1>
-                <div class="sub-header">Product and Visual Design in NYC.</div>
-            </div>
-        </div>
+    <div class="page-content">
+        <section>
+            <h1><span>Work</span></h1>
+            <ul class="work-contain">
+                {#each [...work].reverse() as item, i}
+                    <li>
+                        <button class="work-item">
+                            <img class="work-item__image" srcset="/images/{item.image}.jpg, /images/{item.image}@2x.jpg 2x" src="/images/{item.image}.jpg" alt="{item.name}" />
+                            <div class="work-item__label">
+                                <div class="small">{item.type}</div>
+                                <h3><span>{item.name}</span></h3>
+                            </div>
+                        </button>
+                    </li>
+                {/each}
+            </ul>
+        </section>
+        <section>
+            <h1><span>About</span></h1>
+            <p>I am a detail-oriented, multi talented designer with 15+ years of experience delivering fully-formed products from start to finish.  Focused on building products for everyone, with an emphasis on safety and accessibility.  Believe in asking why, and making sure a problem is truly understood.  Always excited to learn something new.</p>
+        </section>
+        <section>
+            <h1><span>Contact</span></h1>
+            <p>Send me a message.  Say hi, ask me a question, or hire me. <br /> You can also find me on <a href="#1">Linkedin</a>.</p>
+        </section>
     </div>
 {/if}
 
 <style>
-    .page-about {
+    .page-content {
         display: flex;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        max-width: 1300px;
         flex-direction: column;
+        gap: 60px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        padding: var(--Padding-Section);
+        gap: var(--Padding-Section);
+        min-height: calc(100dvh - 181px - 60px);
+    }
+
+    .work-contain {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        gap: var(--Padding-Min);
+
+        & li {
+            display: flex;
+            flex: 1 0 0;
+        }
+    }
+
+    .work-item {
+        height: 600px;
+        position: relative;
+        display: flex;
+        flex: 1 0 0;
         justify-content: center;
-        align-items: center;
-        flex: 1 0 0;
-        align-self: stretch;
-
-        padding: 0px var(--Padding-Page);
+        background: var(--Color-Object);
     }
 
-    .about__top {
+    .work-item__image {
+        width: 600px;
+    }
+
+    .work-item__label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        flex: 1 0 0;
-        align-self: stretch;
-
+        align-items: flex-start;
+        padding: var(--Padding-Large);
         gap: var(--Padding-Small);
-    }
-
-    @keyframes -global-animate-pin {
-        0% { transform: translate(0,0); }
-        50% { transform: translate(0,-10px); }
-        100% { transform: translate(0,0); }
-    }
-
-    @keyframes -global-animate-shadow {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(0.75); opacity: 0.75; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-
-    .pin-contain {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        opacity: var(--pin-o);
-
-        transition: opacity 10ms;
-
-        & .pin {
-            fill: var(--Primary-Color);
-            transition: fill 200ms;
-            animation-name: animate-pin;
-            animation-duration: 4000ms;
-            animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        & .shadow {
-            fill: var(--Shadow);
-            transition: fill 200ms;
-            animation-name: animate-shadow;
-            animation-duration: 4000ms;
-            animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-        }
-    }
-
-    .about__bottom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1 0 0;
-        align-self: stretch;
-    }
-    
-    .about__header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-self: stretch;
-
-        padding: var(--Padding-Medium) 0;
-        gap: var(--Padding-Small);
-
-        & h1 {
-            text-align: center;
-        }
 
         & h3 {
-            max-width: 800px;
-            text-align: center;
+            color: var(--White);
+        }
+
+        & .small {
+            color: var(--Color-Overlay);
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .work-contain {
+            grid-template-columns: repeat(auto-fit, minmax(calc(100dvw - (var(--Padding-Section) * 2)), 1fr));
+        }
+
+        .work-item {
+            height: calc(100dvw - (var(--Padding-Section) * 2));
+        }
+
+        .work-item__image {
+            width: calc(100dvw - (var(--Padding-Section) * 2));
         }
     }
 </style>
