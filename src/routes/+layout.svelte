@@ -19,6 +19,13 @@
         ready = true;
     });
 
+    const scrollToTarget = (id) => {
+        const target = document.getElementById(id);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     function switchTheme() {
         localStorage.setItem('theme', !dark ? 'dark' : 'light');
     }
@@ -43,9 +50,9 @@
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
         <div class="page-nav">
             <nav>
-                <a href="#1"><span>Work</span></a>
-                <a href="#1"><span>About</span></a>
-                <a href="#1"><span>Contact</span></a>
+                <button on:click={() => scrollToTarget('section-work')}><span>Work</span></button>
+                <button on:click={() => scrollToTarget('section-about')}><span>About</span></button>
+                <button on:click={() => scrollToTarget('section-contact')}><span>Contact</span></button>
             </nav>
             <div class="switch-contain">
                 <input type="checkbox" id="theme-switch" bind:checked={dark} on:click={switchTheme}/>
@@ -86,7 +93,7 @@
         <div class="header-name" class:header-name--small={y > 120 && w > 700}>
             <span>Thomas Reed-Mu&ntilde;oz</span>
         </div>
-        <div class="header-sub">Product and Visual Design.</div>
+        <div class="header-sub">Product and Visual Designer.  UI &amp; UX.</div>
         
         <slot />
         
@@ -151,7 +158,7 @@
         flex-direction: row;
         gap: var(--Padding-Large);
 
-        & a {
+        & button {
             display: flex;
             height: 24px;
             justify-content: center;

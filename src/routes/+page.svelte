@@ -14,7 +14,7 @@
 
 {#if ready}
     <div class="page-content">
-        <section>
+        <section id="section-work">
             <h1><span>Work</span></h1>
             <ul class="work-contain">
                 {#each [...work].reverse() as item, i}
@@ -30,13 +30,253 @@
                 {/each}
             </ul>
         </section>
-        <section>
+        <section id="section-about">
             <h1><span>About</span></h1>
-            <p>I am a detail-oriented, multi talented designer with 15+ years of experience delivering fully-formed products from start to finish.  Focused on building products for everyone, with an emphasis on safety and accessibility.  Believe in asking why, and making sure a problem is truly understood.  Always excited to learn something new.</p>
+            <p>I am a detail-oriented, multi talented designer with 15+ years of experience delivering fully-formed products from start to finish.  Focused on building products for everyone, with an emphasis on safety and accessibility.  Believe in asking why, and making sure a problem is truly understood.  Always excited to learn something&nbsp;new.</p>
+            <div class="skills">
+                <div class="skills__header">
+                    <div class="skills__header-left">
+                        <span>Skills</span>
+                        <span>Level</span>
+                    </div>
+                    <div class="skills__header-right">
+                        <span>Basic</span>
+                        <span>Expert</span>
+                    </div>
+                </div>
+                <div class="skills__container skills--green">
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>UX</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Prototyping</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Iconography</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Wire-Framing</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Typography</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Accessibility</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>E2E Process</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--3">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Animation</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--3">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Mobile</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                </div>
+                <div class="skills__container skills--orange">
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>JS</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Svelte</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--3">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Git</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--2">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>React</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                </div>
+                <div class="skills__container skills--red">
+                    <div class="skills__skill skills__skill--5">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--4">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>VSCode</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--3">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Fusion360</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                    <div class="skills__skill skills__skill--1">
+                        <div class="skills__header-left">
+                            <span class="skills__circle"></span>
+                            <span>Blender</span>
+                        </div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                        <div class="skills__level"></div>
+                    </div>
+                </div>
+                <div class="skills__header">
+                    <div class="skills__header-left">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 5V5.5H8H15C15.2761 5.5 15.5 5.72386 15.5 6V8.79289L13.7929 10.5H12.2071L11.3536 9.64645L11 9.29289L10.6464 9.64645L9.79289 10.5H8H7.5V11V11.4384C7.5 12.1267 7.03155 12.7267 6.3638 12.8937L2.3638 13.8937C1.41708 14.1303 0.5 13.4143 0.5 12.4384V3.56155C0.5 2.5857 1.41708 1.86966 2.3638 2.10634L6.3638 3.10634C7.03155 3.27328 7.5 3.87325 7.5 4.56155V5Z" stroke="#FFFFFF" />
+                            <path d="M3 6H4V10H3V6Z" fill="#FFFFFF" />
+                        </svg>
+                        <div class="skills__key">
+                            <div class="skills__key-item skills--green"><span class="skills__circle"></span>Design</div>
+                            <div class="skills__key-item skills--orange"><span class="skills__circle"></span>Tech</div>
+                            <div class="skills__key-item skills--red"><span class="skills__circle"></span>App</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
+        <section id="section-contact">
             <h1><span>Contact</span></h1>
-            <p>Send me a message.  Say hi, ask me a question, or hire me. <br /> You can also find me on <a href="#1">Linkedin</a>.</p>
+            <p>Send me a message.  Say hi, ask me a question, or hire me.  You can also find me on&nbsp;<a href="#1">Linkedin</a>.</p>
         </section>
     </div>
 {/if}
@@ -53,7 +293,12 @@
         flex-direction: column;
         padding: var(--Padding-Section);
         gap: var(--Padding-Section);
-        min-height: calc(100dvh - 181px - 60px);
+        min-height: calc(100dvh - ((var(--Padding-Section) * 4) + 24px));
+        scroll-margin-top: calc((var(--Padding-Section) * 2) + 24px);
+    }
+
+    section:last-child {
+        min-height: calc(100dvh - ((var(--Padding-Section) * 6) + 62px));
     }
 
     .work-contain {
@@ -99,6 +344,136 @@
         & .small {
             color: var(--Color-Overlay);
         }
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: column;
+        gap: var(--Padding-XSmall);
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--White);
+        max-width: 800px;
+    }
+
+    .skills__header {
+        display: flex;
+        gap: 1px;
+    }
+
+    .skills__header-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        background: var(--Color-Object);
+        height: 30px;
+        width: 200px;
+    }
+
+    .skills__header-right {
+        display: flex;
+        align-items: center;
+        flex: 1 0 0;
+        justify-content: space-between;
+        padding: 0 10px;
+        background: var(--Color-Object);
+        height: 30px;
+    }
+
+    .skills__skill {
+        display: flex;
+        gap: 1px;
+    }
+
+    .skills__skill--5 {
+        & .skills__level:not(:nth-child(-n+6)) {
+            background: none;
+        }
+    }
+
+    .skills__skill--4 {
+        & .skills__level:not(:nth-child(-n+5)) {
+            background: none;
+        }
+    }
+
+    .skills__skill--3 {
+        & .skills__level:not(:nth-child(-n+4)) {
+            background: none;
+        }
+    }
+
+    .skills__skill--2 {
+        & .skills__level:not(:nth-child(-n+3)) {
+            background: none;
+        }
+    }
+
+    .skills__skill--1 {
+        & .skills__level:not(:nth-child(-n+2)) {
+            background: none;
+        }
+    }
+
+    .skills__level {
+        height: 30px;
+        display: flex;
+        flex: 1 0 0;
+    }
+
+    .skills__circle {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+    }
+
+    .skills__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .skills--green {
+        & .skills__circle {
+            background: var(--Color-Green);
+        }
+
+        & .skills__level {
+            background: var(--Color-Green);
+        }
+    }
+
+    .skills--orange {
+        & .skills__circle {
+            background: var(--Color-Orange);
+        }
+
+        & .skills__level {
+            background: var(--Color-Orange);
+        }
+    }
+
+    .skills--red {
+        & .skills__circle {
+            background: var(--Color-Red);
+        }
+
+        & .skills__level {
+            background: var(--Color-Red);
+        }
+    }
+
+    .skills__key {
+        display: flex;
+        gap: 10px;
+    }
+
+    .skills__key-item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
     }
 
     @media screen and (max-width: 700px) {
