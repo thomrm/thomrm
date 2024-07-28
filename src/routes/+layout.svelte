@@ -2,7 +2,6 @@
     import '../lib/base.css';
     import '../lib/colors.css';
     import '../lib/fonts.css';
-    import { page } from '$app/stores';
     import { onMount } from 'svelte';
     import { dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
@@ -93,7 +92,7 @@
         <div class="header-name" class:header-name--small={y > 120 && w > 700}>
             <span>Thomas Reed-Mu&ntilde;oz</span>
         </div>
-        <div class="header-sub">Product and Visual Designer.  UI &amp; UX.</div>
+        <div class="header-sub">UI &amp; UX. Product and Visual Designer.</div>
         
         <slot />
         

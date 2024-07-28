@@ -100,52 +100,22 @@ button {
 
 :root .button {
     display: flex;
-    height: 60px;
+    height: 50px;
     justify-content: center;
     align-items: center;
-    border-radius: 999px;
     text-decoration: none;
-    text-align: center;
-    border: 2px solid var(--Primary-Color);
     box-sizing: border-box;
-    cursor: pointer;
-    outline-color: transparent;
-    outline-width: 3px;
-    outline-style: solid;
-    font-family: 'Norms';
-    font-size: 1.8rem;
-    font-weight: 500;
+    padding: 0 20px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: var(--Color-Primary);
+    color: var(--Color-Base);
+    transition: background-color 200ms, color 200ms;
+}
 
-    padding: 0 var(--Padding-Large);
-
-    background: var(--Background-Primary);
-    color: var(--Primary-Color);
-
-    transition: outline-color 200ms, outline-offset 200ms, color 200ms, background-color 200ms, border-color 200ms;
-
-    &.icon {
-        padding: 0;
-        width: 60px;
-    }
-
-    &.split-left {
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-right: 0px;
-    }
-
-    &.split-right {
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-    }
-
-    &:focus-visible {
-        outline-color: var(--Primary-Color);
-        outline-width: 3px;
-        outline-offset: 3px;
-        outline-style: solid;
-        z-index: 3;
-    }
+.flex {
+    display: flex;
 }
 
 .switch-contain {

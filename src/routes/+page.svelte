@@ -20,7 +20,7 @@
                 {#each [...work].reverse() as item, i}
                     <li>
                         <button class="work-item">
-                            <img class="work-item__image" srcset="/images/{item.image}.jpg, /images/{item.image}@2x.jpg 2x" src="/images/{item.image}.jpg" alt="{item.name}" />
+                            <img class="work-item__image" srcset="/images/{item.image}_1x.webp, /images/{item.image}_2x.webp 2x" src="/images/{item.image}_1x.webp" alt="{item.name}" />
                             <div class="work-item__label">
                                 <div class="small">{item.type}</div>
                                 <h3><span>{item.name}</span></h3>
@@ -36,8 +36,18 @@
             <div class="skills">
                 <div class="skills__header">
                     <div class="skills__header-left">
-                        <span>Skills</span>
-                        <span>Level</span>
+                        <span>
+                            Skills
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 11.0566L3.90212 4.5H12.0979L8 11.0566Z" stroke="currentColor" />
+                            </svg>
+                        </span>
+                        <span>
+                            Level
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0566 8L4.5 12.0979L4.5 3.90212L11.0566 8Z" stroke="currentColor" />
+                            </svg>
+                        </span>
                     </div>
                     <div class="skills__header-right">
                         <span>Basic</span>
@@ -262,8 +272,8 @@
                 <div class="skills__header">
                     <div class="skills__header-left">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 5V5.5H8H15C15.2761 5.5 15.5 5.72386 15.5 6V8.79289L13.7929 10.5H12.2071L11.3536 9.64645L11 9.29289L10.6464 9.64645L9.79289 10.5H8H7.5V11V11.4384C7.5 12.1267 7.03155 12.7267 6.3638 12.8937L2.3638 13.8937C1.41708 14.1303 0.5 13.4143 0.5 12.4384V3.56155C0.5 2.5857 1.41708 1.86966 2.3638 2.10634L6.3638 3.10634C7.03155 3.27328 7.5 3.87325 7.5 4.56155V5Z" stroke="#FFFFFF" />
-                            <path d="M3 6H4V10H3V6Z" fill="#FFFFFF" />
+                            <path d="M7.5 5V5.5H8H15C15.2761 5.5 15.5 5.72386 15.5 6V8.79289L13.7929 10.5H12.2071L11.3536 9.64645L11 9.29289L10.6464 9.64645L9.79289 10.5H8H7.5V11V11.4384C7.5 12.1267 7.03155 12.7267 6.3638 12.8937L2.3638 13.8937C1.41708 14.1303 0.5 13.4143 0.5 12.4384V3.56155C0.5 2.5857 1.41708 1.86966 2.3638 2.10634L6.3638 3.10634C7.03155 3.27328 7.5 3.87325 7.5 4.56155V5Z" stroke="currentColor" />
+                            <path d="M3 6H4V10H3V6Z" fill="currentColor" />
                         </svg>
                         <div class="skills__key">
                             <div class="skills__key-item skills--green"><span class="skills__circle"></span>Design</div>
@@ -276,7 +286,10 @@
         </section>
         <section id="section-contact">
             <h1><span>Contact</span></h1>
-            <p>Send me a message.  Say hi, ask me a question, or hire me.  You can also find me on&nbsp;<a href="#1">Linkedin</a>.</p>
+            <p>Send me a message.  <br />Say hi, ask me a question, or hire me.  <br />You can also find me on&nbsp;<a href="#1">Linkedin</a>.</p>
+            <div class="flex">
+                <a href="mailto:thomas@reedmunoz.com" aria-label="Email Thomas Reed-Munoz" class="button">mailto:thomas@reedmunoz.com</a>
+            </div>
         </section>
     </div>
 {/if}
@@ -369,6 +382,16 @@
         background: var(--Color-Object);
         height: 30px;
         width: 200px;
+
+        & span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        & svg {
+            color: var(--Color-Overlay);
+        }
     }
 
     .skills__header-right {
