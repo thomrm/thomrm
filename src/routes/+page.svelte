@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { work } from '../lib/projects.js';
+    import { skills } from '../lib/skills.js';
 
     let ready = false;
 
@@ -55,219 +56,64 @@
                     </div>
                 </div>
                 <div class="skills__container skills--green">
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>UX</span>
+                    {#each skills
+                        .filter(item => item.type === 'design')
+                        .sort((a, b) => {
+                            return (b.level - a.level) || a.skill.localeCompare(b.skill);
+                        }) 
+                    as item, i}
+                        <div class="skills__skill skills__skill--{item.level}">
+                            <div class="skills__header-left">
+                                <span class="skills__circle"></span>
+                                <span>{item.skill}</span>
+                            </div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
                         </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Prototyping</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Iconography</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Wire-Framing</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Typography</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Accessibility</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>E2E Process</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--3">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Animation</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--3">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Mobile</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
+                    {/each}
                 </div>
                 <div class="skills__container skills--orange">
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>HTML</span>
+                    {#each skills
+                        .filter(item => item.type === 'tech')
+                        .sort((a, b) => {
+                            return (b.level - a.level) || a.skill.localeCompare(b.skill);
+                        }) 
+                    as item, i}
+                        <div class="skills__skill skills__skill--{item.level}">
+                            <div class="skills__header-left">
+                                <span class="skills__circle"></span>
+                                <span>{item.skill}</span>
+                            </div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
                         </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>CSS</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>JS</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Svelte</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--3">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Git</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--2">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>React</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
+                    {/each}
                 </div>
                 <div class="skills__container skills--red">
-                    <div class="skills__skill skills__skill--5">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Figma</span>
+                    {#each skills
+                        .filter(item => item.type === 'app')
+                        .sort((a, b) => {
+                            return (b.level - a.level) || a.skill.localeCompare(b.skill);
+                        }) 
+                    as item, i}
+                        <div class="skills__skill skills__skill--{item.level}">
+                            <div class="skills__header-left">
+                                <span class="skills__circle"></span>
+                                <span>{item.skill}</span>
+                            </div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
+                            <div class="skills__level"></div>
                         </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--4">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>VSCode</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--3">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Fusion360</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
-                    <div class="skills__skill skills__skill--1">
-                        <div class="skills__header-left">
-                            <span class="skills__circle"></span>
-                            <span>Blender</span>
-                        </div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                        <div class="skills__level"></div>
-                    </div>
+                    {/each}
                 </div>
                 <div class="skills__header">
                     <div class="skills__header-left">
