@@ -23,11 +23,13 @@
     background: var(--Color-Object);
     padding: var(--Padding-Small);
     box-sizing: border-box;
+    border-radius: 8px;
 
     & iframe {
         width: calc(800px - (var(--Padding-Small) * 2));
         height: calc(600px - (var(--Padding-Small) * 2));
         background: var(--Color-Base);
+        border-radius: 2px;
     }
 }
 

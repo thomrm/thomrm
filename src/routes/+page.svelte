@@ -70,7 +70,7 @@
                                 <div class="small">{item.type}</div>
                                 <h3><span>{item.name}</span></h3>
                             </div>
-                            <div class="work-item__number"><span>{(i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</span></div>
+                            <!-- <div class="work-item__number"><span>{(i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</span></div> -->
                         </button>
                     </li>
                 {/each}
@@ -177,7 +177,18 @@
         </section>
         <section id="section-contact">
             <h1><span>Contact</span></h1>
-            <p>Send me a message.  <br />Say hi, ask me a question, or hire me.  <br />You can also find me on&nbsp;<a href="#1">Linkedin</a>.</p>
+            <p>
+                Send me a message at thomas@reedmunoz.com.<br />
+                Say hi, ask me a question, or hire me.<br />
+                You can also find me on
+                <a href="https://www.linkedin.com/in/thomas-reed-munoz/" target="_blank">
+                    Linkedin
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 4.5H2.5V13.5H11.5V9" stroke="currentColor" />
+                        <path d="M7 9L13.5 2.5M13.5 2.5V9M13.5 2.5H7" stroke="currentColor" />
+                    </svg>
+                </a>
+            </p>
             <div class="flex">
                 <a href="mailto:thomas@reedmunoz.com" aria-label="Email Thomas Reed-Munoz" class="button">mailto:thomas@reedmunoz.com</a>
             </div>

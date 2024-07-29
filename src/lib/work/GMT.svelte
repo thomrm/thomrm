@@ -17,8 +17,8 @@
         <a href="https://watch-series.vercel.app" target="_blank">
             <span>https://watch-series.vercel.app</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 4.5H2.5V13.5H11.5V9" stroke="#FFFFFF" />
-                <path d="M7 9L13.5 2.5M13.5 2.5V9M13.5 2.5H7" stroke="#FFFFFF" />
+                <path d="M7 4.5H2.5V13.5H11.5V9" stroke="currentColor" />
+                <path d="M7 9L13.5 2.5M13.5 2.5V9M13.5 2.5H7" stroke="currentColor" />
             </svg>
         </a>
     </div>
