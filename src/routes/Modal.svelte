@@ -1,4 +1,6 @@
 <script>
+    import { fade } from 'svelte/transition';
+
     export let modalOpen = false;
     export let closeModal;
 
@@ -12,31 +14,33 @@
 
 <svelte:window bind:innerWidth />
 
-<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-<div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}">
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="modal" on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px">
-        <div class="modal__nav">
-            <div class="button-container">
-                <button class="small-button">
-                    <span>Previous</span>
-                </button>
-                <button class="small-button">
-                    <span>Next</span>
+{#if modalOpen}
+    <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+    <div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}" transition:fade={{duration: 100}}>
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div class="modal" on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px" in:fade={{duration: 100, delay: 100}}>
+            <div class="modal__nav">
+                <div class="button-container">
+                    <button class="small-button">
+                        <span>Previous</span>
+                    </button>
+                    <button class="small-button">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <button class="small-button" on:click={closeModal}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" />
+                    </svg>
+                    <span>Close</span>
                 </button>
             </div>
-            <button class="small-button" on:click={closeModal}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" />
-                </svg>
-                <span>Close</span>
-            </button>
-        </div>
-        <div class="modal__content">
-            <slot />
+            <div class="modal__content">
+                <slot />
+            </div>
         </div>
     </div>
-</div>
+{/if}
 
 <style>
     .modal-container {

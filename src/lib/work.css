@@ -27,6 +27,7 @@
     & iframe {
         width: calc(800px - (var(--Padding-Small) * 2));
         height: calc(600px - (var(--Padding-Small) * 2));
+        background: var(--Color-Base);
     }
 }
 
