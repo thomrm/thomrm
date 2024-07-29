@@ -8,10 +8,9 @@
  
     inject({ mode: dev ? 'development' : 'production' });
 
-    let dark;
     let ready = false;
-    let y = 0;
-    let w = 0;
+
+    let app, appScroll, dark;
 
     onMount(() => {
         dark = localStorage.theme === 'dark' ? true : false;
@@ -30,14 +29,13 @@
     }
 
     // Get scrollbar width
-    let scrollOffset;
-    let scrollClient;
+    let scrollOffset, scrollClient;
     $: scrollWidth = scrollOffset - scrollClient;
 
     $: innerWidth = 0;
 </script>
 
-<svelte:window bind:scrollY="{y}" bind:innerWidth />
+<svelte:window bind:innerWidth />
 
 <svelte:head>
     {#if dark == false}
@@ -53,7 +51,15 @@
 </svelte:head>
 
 {#if ready}
-    <div class="app-wrapper" class:light={!dark} class:dark={dark} bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px">
+    <div class="app-wrapper" 
+        class:light={!dark} 
+        class:dark={dark} 
+        bind:this={app}
+        on:scroll={()=>appScroll=app.scrollTop}
+        bind:offsetWidth={scrollOffset} 
+        bind:clientWidth={scrollClient} 
+        style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px"
+        >
         <div class="page-nav">
             <nav class="button-container">
                 <button class="small-button" on:click={() => scrollToTarget('section-work')}><span>Work</span></button>
@@ -96,7 +102,7 @@
                 </defs>
             </svg>
         </div>
-        <div class="header-name" class:header-name--small={y > 120 && w > 700}>
+        <div class="header-name" class:header-name--small={appScroll > 120 && innerWidth > 700}>
             <span>Thomas Reed-Mu&ntilde;oz</span>
         </div>
         <div class="header-sub">UI &amp; UX. Product and Visual Designer.</div>
@@ -133,13 +139,13 @@
         font-weight: 200;
         font-size: 1.8rem;
         color: var(--Color-Secondary);
-        transition: background-color 200ms;
         cursor: default;
         padding: 0 var(--Padding-Section);
         overflow-y: scroll;
         overflow-x: hidden;
         overscroll-behavior: contain;
         scrollbar-color: var(--Color-Primary) transparent;
+        transition: background-color 200ms, scrollbar-color 200ms;
 
         & ::selection { 
             background: var(--Color-Primary);
