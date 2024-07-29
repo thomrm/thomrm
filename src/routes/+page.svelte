@@ -1,11 +1,24 @@
 <script>
     import { onMount } from 'svelte';
+    import Modal from './Modal.svelte';
     import { work } from '../lib/projects.js';
     import { skills } from '../lib/skills.js';
 
     let ready = false;
 
+    let modalOpen = false;
+    let modalContent = '';
+
     onMount(() => ready = true);
+
+    function openModal(content) {
+        modalContent = content;
+        modalOpen = true;
+    }
+
+    function closeModal() {
+        modalOpen = false;
+    }
 </script>
 
 <svelte:head>
@@ -14,6 +27,10 @@
     <link rel="preload" as="image" href="/images/{[...work].reverse()[0].image}_1x.webp" imagesrcset="/images/{[...work].reverse()[0].image}_1x.webp, /images/{[...work].reverse()[0].image}_2x.webp 2x" />
 </svelte:head>
 
+<Modal {modalOpen} closeModal={closeModal}>
+    <p>{modalContent}</p>
+</Modal>
+
 {#if ready}
     <div class="page-content">
         <section id="section-work">
@@ -21,7 +38,7 @@
             <ul class="work-contain">
                 {#each [...work].reverse() as item, i}
                     <li>
-                        <button class="work-item">
+                        <button class="work-item" on:click={() => openModal('This is content for Nav')}>
                             <img class="work-item__image" srcset="/images/{item.image}_1x.webp, /images/{item.image}_2x.webp 2x" src="/images/{item.image}_1x.webp" alt="{item.name}" />
                             <div class="work-item__label">
                                 <div class="small">{item.type}</div>

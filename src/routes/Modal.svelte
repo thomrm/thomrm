@@ -1,0 +1,71 @@
+<script>
+    export let modalOpen = false;
+    export let closeModal;
+</script>
+
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+<div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}">
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="modal" on:click|stopPropagation>
+        <div class="modal__nav">
+            <div class="button-container">
+                <button class="small-button">
+                    <span>Previous</span>
+                </button>
+                <button class="small-button">
+                    <span>Next</span>
+                </button>
+            </div>
+            <button class="small-button" on:click={closeModal}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" />
+                </svg>
+                <span>Close</span>
+            </button>
+        </div>
+        <div class="modal__content">
+            <slot />
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(21,21,21,0.9);
+        z-index: 3;
+    }
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        background: var(--Color-Base);
+        max-width: 860px;
+        height: 100dvh;
+        margin: 0 auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .modal__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--Padding-Section);
+        background: var(--Color-Base);
+        position: sticky;
+        top: 0;
+    }
+
+    .modal__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--Padding-Section);
+        padding: var(--Padding-Section);
+        padding-top: 0;
+    }
+</style>

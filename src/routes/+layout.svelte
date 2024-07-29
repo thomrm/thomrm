@@ -48,10 +48,10 @@
 {#if ready}
     <div class="app-wrapper" class:light={!dark} class:dark={dark}>
         <div class="page-nav">
-            <nav>
-                <button on:click={() => scrollToTarget('section-work')}><span>Work</span></button>
-                <button on:click={() => scrollToTarget('section-about')}><span>About</span></button>
-                <button on:click={() => scrollToTarget('section-contact')}><span>Contact</span></button>
+            <nav class="button-container">
+                <button class="small-button" on:click={() => scrollToTarget('section-work')}><span>Work</span></button>
+                <button class="small-button" on:click={() => scrollToTarget('section-about')}><span>About</span></button>
+                <button class="small-button" on:click={() => scrollToTarget('section-contact')}><span>Contact</span></button>
             </nav>
             <div class="switch-contain">
                 <input type="checkbox" id="theme-switch" bind:checked={dark} on:click={switchTheme}/>
@@ -120,7 +120,7 @@
 
 <style>
     .app-wrapper {
-        min-height: 100dvh;
+        height: 100dvh;
         background: var(--Color-Base);
         font-family: 'Norms', sans-serif;
         font-weight: 200;
@@ -128,6 +128,10 @@
         color: var(--Color-Secondary);
         transition: background-color 200ms;
         cursor: default;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        scrollbar-color: var(--Color-Primary) transparent;
 
         & ::selection { 
             background: var(--Color-Primary);
@@ -150,31 +154,6 @@
         right: 0;
         z-index: 2;
         transition: background-color 200ms;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        gap: var(--Padding-Large);
-
-        & button {
-            display: flex;
-            height: 24px;
-            justify-content: center;
-            align-items: center;
-            color: var(--Color-Primary);
-            font-weight: 800;
-            text-decoration: none;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            font-size: 14px;
-            cursor: pointer;
-            transition: color 200ms;
-
-            & span {
-                margin-top: 1px;
-            }
-        }
     }
 
     .header-mark {
