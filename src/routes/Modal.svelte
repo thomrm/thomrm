@@ -1,8 +1,15 @@
 <script>
     import { fade } from 'svelte/transition';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+    const next = () => dispatch('next-work');
+    const previous = () => dispatch('previous-work');
 
     export let modalOpen = false;
     export let closeModal;
+    export let current, max;
 
     // Get scrollbar width
     let scrollOffset;
@@ -10,6 +17,8 @@
     $: scrollWidth = scrollOffset - scrollClient;
 
     $: innerWidth = 0;
+
+    console.log(max);
 </script>
 
 <svelte:window bind:innerWidth />
@@ -21,10 +30,10 @@
         <div class="modal" on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px" in:fade={{duration: 100, delay: 100}}>
             <div class="modal__nav">
                 <div class="button-container">
-                    <button class="small-button">
+                    <button class="small-button" on:click={previous} disabled={current == 0}>
                         <span>Previous</span>
                     </button>
-                    <button class="small-button">
+                    <button class="small-button" on:click={next} disabled={current == max - 1}>
                         <span>Next</span>
                     </button>
                 </div>

@@ -8,10 +8,11 @@
 
     let modalOpen = false;
     let modalContent = '';
+    let workNum = null;
 
     onMount(() => ready = true);
 
-    async function openModal(content) {
+    async function openModal(content, i) {
         if (content == 'GMT') {
             modalContent = (await import('$lib/work/GMT.svelte')).default;
         } else if (content == 'MoonbeamBadges') {
@@ -27,11 +28,22 @@
         } else {
             modalContent = (await import('$lib/work/NotFound.svelte')).default;
         }
+
+        workNum = i;
+
         modalOpen = true;
     }
 
     function closeModal() {
         modalOpen = false;
+    }
+
+    function nextWork() {
+        openModal([...work].reverse()[workNum + 1].id, workNum + 1);
+    }
+
+    function previousWork() {
+        openModal([...work].reverse()[workNum - 1].id, workNum - 1);
     }
 </script>
 
@@ -41,7 +53,7 @@
     <link rel="preload" as="image" href="/work/{[...work].reverse()[0].id}/Blueprint_1x.webp" imagesrcset="/work/{[...work].reverse()[0].id}/Blueprint_1x.webp, /work/{[...work].reverse()[0].id}/Blueprint_2x.webp 2x" />
 </svelte:head>
 
-<Modal {modalOpen} closeModal={closeModal}>
+<Modal {modalOpen} closeModal={closeModal} current={workNum} max={work.length} on:next-work={nextWork} on:previous-work={previousWork}>
     <svelte:component this={modalContent} />
 </Modal>
 
@@ -52,7 +64,7 @@
             <ul class="work-contain">
                 {#each [...work].reverse() as item, i}
                     <li>
-                        <button class="work-item" on:click={() => openModal(item.id)}>
+                        <button class="work-item" on:click={() => openModal(item.id, i)}>
                             <img class="work-item__image" srcset="/work/{item.id}/Blueprint_1x.webp, /work/{item.id}/Blueprint_2x.webp 2x" src="/work/{item.id}/Blueprint_1x.webp" alt="{item.name}" />
                             <div class="work-item__label">
                                 <div class="small">{item.type}</div>
