@@ -43,7 +43,7 @@ const data = [
     }
 ]
 
-export const work = data.map(({ id, name, type, desc, skills, image }) => {
+export const work = data.map(({ name, type, desc, skills, image }) => {
     return {
 		name,
         type,

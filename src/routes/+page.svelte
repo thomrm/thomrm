@@ -26,6 +26,7 @@
                                 <div class="small">{item.type}</div>
                                 <h3><span>{item.name}</span></h3>
                             </div>
+                            <div class="work-item__number"><span>{(i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</span></div>
                         </button>
                     </li>
                 {/each}
@@ -38,7 +39,7 @@
                 <div class="skills__header">
                     <div class="skills__header-left">
                         <span>
-                            Skills
+                            Skill
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 11.0566L3.90212 4.5H12.0979L8 11.0566Z" stroke="currentColor" />
                             </svg>
@@ -173,7 +174,6 @@
     }
 
     .work-item {
-        height: 600px;
         position: relative;
         display: flex;
         flex: 1 0 0;
@@ -202,6 +202,26 @@
 
         & .small {
             color: var(--Color-Overlay);
+        }
+    }
+
+    .work-item__number {
+        font-size: 6rem;
+        font-weight: 800;
+        letter-spacing: -0.06em;
+        height: 5rem;
+        line-height: 1;
+        color: var(--Color-Object);
+        -webkit-text-stroke: 1px var(--Color-Overlay);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: var(--Padding-Large);
+        user-select: none;
+
+        & span {
+            display: block;
+            margin-top: -2px;
         }
     }
 
@@ -350,12 +370,14 @@
             grid-template-columns: repeat(auto-fit, minmax(calc(100dvw - (var(--Padding-Section) * 2)), 1fr));
         }
 
-        .work-item {
-            height: calc(100dvw - (var(--Padding-Section) * 2));
-        }
-
         .work-item__image {
             width: calc(100dvw - (var(--Padding-Section) * 2));
+        }
+    }
+
+    @media screen and (max-width: 440px) {
+        .work-item {
+            padding: 20px 0;
         }
     }
 </style>
