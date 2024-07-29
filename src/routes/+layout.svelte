@@ -1,5 +1,6 @@
 <script>
     import '../lib/base.css';
+    import '../lib/work.css';
     import '../lib/colors.css';
     import '../lib/fonts.css';
     import { onMount } from 'svelte';
@@ -28,7 +29,6 @@
         localStorage.setItem('theme', !dark ? 'dark' : 'light');
     }
 
-    // Get scrollbar width
     let scrollOffset, scrollClient;
     $: scrollWidth = scrollOffset - scrollClient;
 

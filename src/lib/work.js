@@ -4,51 +4,51 @@ const data = [
         type: 'App Build',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(EDHb)'
+        id: 'EDHb'
     },
     {
         name: 'Reporting on Twitch',
         type: 'Case Study',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(Reporting)'
+        id: 'TwitchReporting'
     },
     {
         name: 'NYC Vectors',
         type: 'Quick Shot',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(Token)'
+        id: 'NYCVectors'
     },
     {
         name: 'Lorebox.ink',
         type: 'App Build',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(Lorebox)'
+        id: 'Lorebox'
     },
     {
         name: 'Moonbeam Badges',
         type: 'Quick Shot',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(MoonbeamBadges)'
+        id: 'MoonbeamBadges'
     },
     {
         name: 'Watch Series (GMT)',
         type: 'Quick Shot',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
-        image: 'Blueprint(GMT)'
+        id: 'GMT'
     }
 ]
 
-export const work = data.map(({ name, type, desc, skills, image }) => {
+export const work = data.map(({ name, type, desc, skills, id }) => {
     return {
 		name,
         type,
 		desc,
 		skills,
-        image
+        id
 	};
 });

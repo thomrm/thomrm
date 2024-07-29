@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
     import Modal from './Modal.svelte';
-    import { work } from '../lib/projects.js';
-    import { skills } from '../lib/skills.js';
+    import { work } from '$lib/work.js';
+    import { skills } from '$lib/skills.js';
 
     let ready = false;
 
@@ -11,8 +11,22 @@
 
     onMount(() => ready = true);
 
-    function openModal(content) {
-        modalContent = content;
+    async function openModal(content) {
+        if (content == 'GMT') {
+            modalContent = (await import('$lib/work/GMT.svelte')).default;
+        } else if (content == 'MoonbeamBadges') {
+            modalContent = (await import('$lib/work/MoonbeamBadges.svelte')).default;
+        } else if (content == 'Lorebox') {
+            modalContent = (await import('$lib/work/Lorebox.svelte')).default;
+        } else if (content == 'NYCVectors') {
+            modalContent = (await import('$lib/work/NYCVectors.svelte')).default;
+        } else if (content == 'TwitchReporting') {
+            modalContent = (await import('$lib/work/TwitchReporting.svelte')).default;
+        } else if (content == 'EDHb') {
+            modalContent = (await import('$lib/work/EDHb.svelte')).default;
+        } else {
+            modalContent = (await import('$lib/work/NotFound.svelte')).default;
+        }
         modalOpen = true;
     }
 
@@ -24,11 +38,11 @@
 <svelte:head>
 	<title>Thomas Reed-Munoz. Product and Visual Design.</title>
     <meta name="description" content="Personal portfolio for Thomas Reed-Munoz.">
-    <link rel="preload" as="image" href="/images/{[...work].reverse()[0].image}_1x.webp" imagesrcset="/images/{[...work].reverse()[0].image}_1x.webp, /images/{[...work].reverse()[0].image}_2x.webp 2x" />
+    <link rel="preload" as="image" href="/images/Blueprint({[...work].reverse()[0].id})_1x.webp" imagesrcset="/images/Blueprint({[...work].reverse()[0].id})_1x.webp, /images/Blueprint({[...work].reverse()[0].id})_2x.webp 2x" />
 </svelte:head>
 
 <Modal {modalOpen} closeModal={closeModal}>
-    <p>{modalContent}</p>
+    <svelte:component this={modalContent} />
 </Modal>
 
 {#if ready}
@@ -38,8 +52,8 @@
             <ul class="work-contain">
                 {#each [...work].reverse() as item, i}
                     <li>
-                        <button class="work-item" on:click={() => openModal('This is content for Nav')}>
-                            <img class="work-item__image" srcset="/images/{item.image}_1x.webp, /images/{item.image}_2x.webp 2x" src="/images/{item.image}_1x.webp" alt="{item.name}" />
+                        <button class="work-item" on:click={() => openModal(item.id)}>
+                            <img class="work-item__image" srcset="/images/Blueprint({item.id})_1x.webp, /images/Blueprint({item.id})_2x.webp 2x" src="/images/Blueprint({item.id})_1x.webp" alt="{item.name}" />
                             <div class="work-item__label">
                                 <div class="small">{item.type}</div>
                                 <h3><span>{item.name}</span></h3>
