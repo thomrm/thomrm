@@ -11,6 +11,7 @@
 <svelte:head>
 	<title>Thomas Reed-Munoz. Product and Visual Design.</title>
     <meta name="description" content="Personal portfolio for Thomas Reed-Munoz.">
+    <link rel="preload" as="image" href="/images/{[...work].reverse()[0].image}_1x.webp" imagesrcset="/images/{[...work].reverse()[0].image}_1x.webp, /images/{[...work].reverse()[0].image}_2x.webp 2x" />
 </svelte:head>
 
 {#if ready}
@@ -183,6 +184,7 @@
 
     .work-item__image {
         width: 600px;
+        height: 600px;
     }
 
     .work-item__label {
@@ -372,6 +374,7 @@
 
         .work-item__image {
             width: calc(100dvw - (var(--Padding-Section) * 2));
+            height: calc(100dvw - (var(--Padding-Section) * 2));
         }
     }
 
