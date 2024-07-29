@@ -1,12 +1,21 @@
 <script>
     export let modalOpen = false;
     export let closeModal;
+
+    // Get scrollbar width
+    let scrollOffset;
+    let scrollClient;
+    $: scrollWidth = scrollOffset - scrollClient;
+
+    $: innerWidth = 0;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}">
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="modal" on:click|stopPropagation>
+    <div class="modal" on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px">
         <div class="modal__nav">
             <div class="button-container">
                 <button class="small-button">
@@ -44,6 +53,8 @@
         display: flex;
         flex-direction: column;
         background: var(--Color-Base);
+        padding: 0 var(--Padding-Section);
+        box-sizing: border-box;
         max-width: 860px;
         height: 100dvh;
         margin: 0 auto;
@@ -55,7 +66,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         background: var(--Color-Base);
         position: sticky;
         top: 0;
@@ -65,7 +76,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--Padding-Section);
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         padding-top: 0;
     }
 </style>

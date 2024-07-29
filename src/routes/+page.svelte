@@ -169,7 +169,7 @@
     section {
         display: flex;
         flex-direction: column;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         gap: var(--Padding-Section);
         min-height: calc(100dvh - ((var(--Padding-Section) * 4) + 24px));
         scroll-margin-top: calc((var(--Padding-Section) * 2) + 24px);

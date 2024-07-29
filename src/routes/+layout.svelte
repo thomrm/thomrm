@@ -28,9 +28,16 @@
     function switchTheme() {
         localStorage.setItem('theme', !dark ? 'dark' : 'light');
     }
+
+    // Get scrollbar width
+    let scrollOffset;
+    let scrollClient;
+    $: scrollWidth = scrollOffset - scrollClient;
+
+    $: innerWidth = 0;
 </script>
 
-<svelte:window bind:scrollY="{y}" bind:innerWidth="{w}"/>
+<svelte:window bind:scrollY="{y}" bind:innerWidth />
 
 <svelte:head>
     {#if dark == false}
@@ -43,10 +50,10 @@
             body { background-color: #000000; }
         </style>
     {/if}
-</svelte:head>	
+</svelte:head>
 
 {#if ready}
-    <div class="app-wrapper" class:light={!dark} class:dark={dark}>
+    <div class="app-wrapper" class:light={!dark} class:dark={dark} bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px">
         <div class="page-nav">
             <nav class="button-container">
                 <button class="small-button" on:click={() => scrollToTarget('section-work')}><span>Work</span></button>
@@ -128,7 +135,8 @@
         color: var(--Color-Secondary);
         transition: background-color 200ms;
         cursor: default;
-        overflow-y: auto;
+        padding: 0 var(--Padding-Section);
+        overflow-y: scroll;
         overflow-x: hidden;
         overscroll-behavior: contain;
         scrollbar-color: var(--Color-Primary) transparent;
@@ -146,7 +154,7 @@
         align-items: center;
         justify-content: flex-end;
         height: 24px;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         background: var(--Color-Base);
         position: sticky;
         top: 0;
@@ -160,7 +168,7 @@
         display: flex;
         align-items: flex-start;
         position: relative;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         z-index: 3;
         pointer-events: none;
         margin-top: -84px;
@@ -168,7 +176,6 @@
 
     .header-name {
         position: sticky;
-        padding-left: var(--Padding-Section);
         top: var(--Padding-Section);
         display: flex;
         flex-direction: row;
@@ -192,7 +199,7 @@
     }
 
     .header-sub {
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         padding-top: var(--Padding-Medium);
         line-height: 1;
         transition: color 200ms;
@@ -218,7 +225,7 @@
     .page-footer {
         display: flex;
         flex-direction: column;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Section) 0;
         gap: var(--Padding-XSmall);
 
         & div {
