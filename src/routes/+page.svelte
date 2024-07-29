@@ -38,7 +38,7 @@
 <svelte:head>
 	<title>Thomas Reed-Munoz. Product and Visual Design.</title>
     <meta name="description" content="Personal portfolio for Thomas Reed-Munoz.">
-    <link rel="preload" as="image" href="/images/Blueprint({[...work].reverse()[0].id})_1x.webp" imagesrcset="/images/Blueprint({[...work].reverse()[0].id})_1x.webp, /images/Blueprint({[...work].reverse()[0].id})_2x.webp 2x" />
+    <link rel="preload" as="image" href="/work/{[...work].reverse()[0].id}/Blueprint_1x.webp" imagesrcset="/work/{[...work].reverse()[0].id}/Blueprint_1x.webp, /work/{[...work].reverse()[0].id}/Blueprint_2x.webp 2x" />
 </svelte:head>
 
 <Modal {modalOpen} closeModal={closeModal}>
@@ -53,7 +53,7 @@
                 {#each [...work].reverse() as item, i}
                     <li>
                         <button class="work-item" on:click={() => openModal(item.id)}>
-                            <img class="work-item__image" srcset="/images/Blueprint({item.id})_1x.webp, /images/Blueprint({item.id})_2x.webp 2x" src="/images/Blueprint({item.id})_1x.webp" alt="{item.name}" />
+                            <img class="work-item__image" srcset="/work/{item.id}/Blueprint_1x.webp, /work/{item.id}/Blueprint_2x.webp 2x" src="/work/{item.id}/Blueprint_1x.webp" alt="{item.name}" />
                             <div class="work-item__label">
                                 <div class="small">{item.type}</div>
                                 <h3><span>{item.name}</span></h3>
