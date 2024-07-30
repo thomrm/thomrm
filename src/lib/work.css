@@ -1,7 +1,7 @@
 .work-header {
     display: flex;
     flex-direction: column;
-    gap: var(--Padding-Medium);
+    gap: var(--Padding-Small);
 }
 
 .work-image {
