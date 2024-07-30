@@ -13,6 +13,11 @@
         width: 800px;
         height: 600px;
     }
+
+    & .image-portrait {
+        width: 800px;
+        height: 946px;
+    }
 }
 
 .work-iframe {
@@ -63,6 +68,11 @@
         & .image-horizon {
             width: calc(100dvw - (var(--Padding-Section) * 2));
             height: calc((100dvw - (var(--Padding-Section) * 2)) * .75 );
+        }
+
+        & .image-portrait {
+            width: calc(100dvw - (var(--Padding-Section) * 2));
+            height: calc((100dvw - (var(--Padding-Section) * 2)) * 1.1825 );
         }
     }
 

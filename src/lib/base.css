@@ -117,6 +117,7 @@ button {
 
 .button {
     display: flex;
+    gap: var(--Padding-Small);
     height: 50px;
     justify-content: center;
     align-items: center;

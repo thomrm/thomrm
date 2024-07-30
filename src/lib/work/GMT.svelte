@@ -30,17 +30,17 @@
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/GMT/Image-01_1x.webp, /work/GMT/Image-01_2x.webp 2x" src="/work/GMT/Image-01_1x.webp" alt="GMT Watch" />
-    <span class="small">Finished Vector Design</span>
+    <span class="small">Finished Vector Design.</span>
 </div>
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/GMT/Image-02_1x.webp, /work/GMT/Image-02_2x.webp 2x" src="/work/GMT/Image-02_1x.webp" alt="GMT Watch - Lume" />
-    <span class="small">Lume Shot</span>
+    <span class="small">Lume Shot.</span>
 </div>
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/GMT/Image-03_1x.webp, /work/GMT/Image-03_2x.webp 2x" src="/work/GMT/Image-03_1x.webp" alt="GMT Watch - Pieces" />
-    <span class="small">Individual pieces designed as separate parts for reusability and&nbsp;export</span>
+    <span class="small">Individual pieces designed as separate parts for reusability and&nbsp;export.</span>
 </div>
 
 <style>
