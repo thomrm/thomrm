@@ -4,8 +4,16 @@
 
 	const dispatch = createEventDispatcher();
 
-    const next = () => dispatch('next-work');
-    const previous = () => dispatch('previous-work');
+    let modal;
+
+    const next = () => {
+        dispatch('next-work');
+        modal.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    const previous = () => {
+        dispatch('previous-work');
+        modal.scrollTo({ top: 0, behavior: 'instant' });
+    }
 
     export let modalOpen = false;
     export let closeModal;
@@ -17,8 +25,6 @@
     $: scrollWidth = scrollOffset - scrollClient;
 
     $: innerWidth = 0;
-
-    console.log(max);
 </script>
 
 <svelte:window bind:innerWidth />
@@ -27,7 +33,7 @@
     <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
     <div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}" transition:fade={{duration: 100}}>
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div class="modal" on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px" in:fade={{duration: 100, delay: 100}}>
+        <div class="modal" bind:this={modal} on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px" in:fade={{duration: 100, delay: 100}}>
             <div class="modal__nav">
                 <div class="button-container">
                     <button class="small-button" on:click={previous} disabled={current == 0}>
