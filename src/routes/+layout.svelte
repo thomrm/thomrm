@@ -186,7 +186,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 24px;
+        line-height: 24px;
         z-index: 3;
         font-size: 4rem;
         font-weight: 800;
@@ -194,10 +194,6 @@
         color: var(--Color-Primary);
         transition: font-size 400ms, color 200ms;
         pointer-events: none;
-
-        & span {
-            padding-top: 3px;
-        }
     }
 
     .header-name--small {
