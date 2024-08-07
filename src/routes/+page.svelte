@@ -13,7 +13,9 @@
     onMount(() => ready = true);
 
     async function openModal(content, i) {
-        if (content == 'GMT') {
+        if (content == 'ApolloControls') {
+            modalContent = (await import('$lib/work/ApolloControls.svelte')).default;
+        } else if (content == 'GMT') {
             modalContent = (await import('$lib/work/GMT.svelte')).default;
         } else if (content == 'MoonbeamBadges') {
             modalContent = (await import('$lib/work/MoonbeamBadges.svelte')).default;
@@ -190,7 +192,7 @@
                 </a>
             </p>
             <div class="flex">
-                <a href="mailto:thomas@reedmunoz.com" aria-label="Email Thomas Reed-Munoz" class="button">mailto:thomas@reedmunoz.com</a>
+                <a href="mailto:thomas@reedmunoz.com" aria-label="Email Thomas Reed-Munoz" class="button" target="_blank">mailto:thomas@reedmunoz.com</a>
             </div>
         </section>
     </div>
@@ -249,8 +251,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: var(--Padding-Large);
-        gap: var(--Padding-Small);
+        padding: var(--Padding-Section);
+        padding-top: var(--Padding-Small);
+        gap: var(--Padding-XSmall);
+        background: var(--Color-Object);
 
         & h3 {
             color: var(--White);

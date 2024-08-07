@@ -1,7 +1,7 @@
 const data = [
     {
         name: 'Elder Dragon Handbook',
-        type: 'App Build',
+        type: 'Short',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
         id: 'EDHb'
@@ -15,31 +15,38 @@ const data = [
     },
     {
         name: 'NYC Vectors',
-        type: 'Quick Shot',
+        type: 'Short',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
         id: 'NYCVectors'
     },
     {
         name: 'Lorebox.ink',
-        type: 'App Build',
+        type: 'Case Study',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
         id: 'Lorebox'
     },
     {
         name: 'Moonbeam Badges',
-        type: 'Quick Shot',
+        type: 'Case Study',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
         id: 'MoonbeamBadges'
     },
     {
-        name: 'Watch Series (GMT)',
-        type: 'Quick Shot',
+        name: 'Watch 001 GMT',
+        type: 'Short',
         desc: 'Description goes here.',
         skills: ['Figma', 'UX'],
         id: 'GMT'
+    },
+    {
+        name: 'Lunar Module Components',
+        type: 'Short',
+        desc: 'Description goes here.',
+        skills: ['Figma', 'UX'],
+        id: 'ApolloControls'
     }
 ]
 

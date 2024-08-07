@@ -3,13 +3,11 @@
 </script>
 
 <div class="work-header">
-    <div class="small">Quick Shot</div>
-    <h2><span>Watch Series (GMT)</span></h2>
+    <div class="small">Short</div>
+    <h2><span>Watch 001 GMT</span></h2>
 </div>
 
-<p>First in a series of functional illustrations.  I can't design a real watch, but I can design a virtual one.  A very fun exercise in scale, proportion, and detail.  Creating something that is aesthetically beautiful as well as highly functional and legible.  And then building it in&nbsp;code.</p>
-
-<p>This one is a GMT, or dual time watch, which can track an additional time zone with a 24 hour hand and a rotating outer&nbsp;bezel.</p>
+<p>A GMT, or dual-time watch, can track an additional time zone with a 24 hour hand and a rotating outer bezel. Functional illustration. Watch dial and case design. Prototype built with&nbsp;Svelte.</p>
 
 <div class="work-iframe">
     <div class="iframe-header small">
@@ -30,17 +28,17 @@
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/GMT/Image-01_1x.webp, /work/GMT/Image-01_2x.webp 2x" src="/work/GMT/Image-01_1x.webp" alt="GMT Watch" />
-    <span class="small">Finished Vector Design.</span>
-</div>
-
-<div class="work-image">
-    <img class="image-horizon" srcset="/work/GMT/Image-02_1x.webp, /work/GMT/Image-02_2x.webp 2x" src="/work/GMT/Image-02_1x.webp" alt="GMT Watch - Lume" />
-    <span class="small">Lume Shot.</span>
+    <span class="small">Finished vector&nbsp;design.</span>
 </div>
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/GMT/Image-03_1x.webp, /work/GMT/Image-03_2x.webp 2x" src="/work/GMT/Image-03_1x.webp" alt="GMT Watch - Pieces" />
-    <span class="small">Individual pieces designed as separate parts for reusability and&nbsp;export.</span>
+    <span class="small">Pieces as separate parts for reusability and&nbsp;export.</span>
+</div>
+
+<div class="work-image">
+    <img class="image-horizon" srcset="/work/GMT/Image-02_1x.webp, /work/GMT/Image-02_2x.webp 2x" src="/work/GMT/Image-02_1x.webp" alt="GMT Watch - Lume" />
+    <span class="small">Lume shot.</span>
 </div>
 
 <style>

@@ -3,13 +3,13 @@
 </script>
 
 <div class="work-header">
-    <div class="small">App Build</div>
+    <div class="small">Case Study</div>
     <h2><span>Lorebox.ink</span></h2>
 </div>
 
-<p>Lorcana is a relatively new trading card game, with a wonderful aesthetic and very consistent presentation.  There are a few 3rd party deck builders that exist, but none of them take advantage of that.  I wanted to build something that felt like it fit in with the official&nbsp;product.</p>
+<p>Lorcana is a relatively new trading card game from Disney and Ravensburger with a unique aesthetic and consistent presentation throughout the product. Existing 3rd party deck builders don't take advantage of that and look like they're a part of the Lorcana ecosystem. I wanted to <span class="highlight">create a Lorcana deck builder for the web (and mobile) that felt like it fit in with the official&nbsp;product</span>.</p>
 
-<p>Lorebox.ink is a fully featured app, with sorting, filtering, and viewing the entire Lorcana catalog.  You can assemble a deck and keep track of its stats as well as its price.  Sharing is easy with automated deck image generation for social media, a dedicated interactive view mode, or just copying and pasting the dynamically updating&nbsp;url.</p>
+<p>Lorebox.ink is a fully featured app, with sorting, filtering, and viewing the entire Lorcana catalog. You can assemble a deck and keep track of its stats and price. Sharing is made easy with automated deck image generation for social media, a standalone interactive view mode, or just copying and pasting the dynamically updating&nbsp;url.</p>
 
 <p>Lorebox.ink uses the Lorcast API for card&nbsp;data.</p>
 
@@ -28,15 +28,21 @@
     <span class="small">Main view with card catalog and deck building.</span>
 </div>
 
+<p>Ravensburger's color and font guidelines were used (with adjustments made for accessibility) as a stylistic base. The official mobile app and marketing materials were used as a groundwork for UI elements and aesthetic details. Things like the border scrollwork and general&nbsp;iconography.</p>
+
 <div class="work-image">
     <img class="image-horizon" srcset="/work/Lorebox/Image-02_1x.webp, /work/Lorebox/Image-02_2x.webp 2x" src="/work/Lorebox/Image-02_1x.webp" alt="Lorebox Sharing" />
     <span class="small">Separate deck view for easy sharing.</span>
 </div>
 
+<p>Lorebox.ink was designed and built over the course of about a month. Starting from rough wireframes and then built as a barebones proof-of-concept, with additional features and iterations added after launch. It's grown organically with user feedback and suggestions guiding its&nbsp;direction.</p>
+
 <div class="work-image">
-    <img class="image-portrait" srcset="/work/Lorebox/Image-03_1x.webp, /work/Lorebox/Image-03_2x.webp 2x" src="/work/Lorebox/Image-03_1x.webp" alt="Lorebox Mobile" />
+    <img class="image-mobile" srcset="/work/Lorebox/Image-03_1x.webp, /work/Lorebox/Image-03_2x.webp 2x" src="/work/Lorebox/Image-03_1x.webp" alt="Lorebox Mobile" />
     <span class="small">Mobile View.</span>
 </div>
+
+<p>Working within an established ecosystem and design space can be challenging, especially when it's different stylistically from the work you usually do. With Lorebox.ink, I am incredibly proud of the finished product, and continue to support and add to it.</p>
 
 <style>
     /* Styles */

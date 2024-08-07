@@ -7,7 +7,9 @@
     <h2><span>Reporting on Twitch</span></h2>
 </div>
 
-<p>The previous iteration of the Twitch report flow was overwhelming. A large number of users who started the report process did not finish it. The flow exposed all available options up front, and there was little consideration for where the report originated. The flow for reporting a live stream and the flow for reporting a chat message started the same way. Along with incomplete reports, this also contributed to many misclassified reports. It placed too much of the burden on the users, and they were not guided to accurate responses. This added more roadblocks for specialists trying to resolve reports, and degraded user trust in the reporting&nbsp;system.</p>
+<p>The previous iteration of the Twitch report flow was overwhelming. A large number of users who started the report process did not finish it. The flow exposed all available options up front, and there was little consideration for where the report originated. The user path for reporting a live stream and for reporting a chat message started the same way. Along with incompletion, this also contributed to misclassified reports. It placed too much of the burden on the users, as they were not guided to accurate responses, and in turn, added more roadblocks for specialists trying to resolve reports. We wanted to <span class="highlight">build a better reporting process, reducing incompletion rates and increasing report&nbsp;accuracy</span>.</p>
+
+<p>The process for this work followed our usual path. Simplified, we verify the problem, brainstorm solutions, test solutions (prototypes in this case), build, and&nbsp;followup.</p>
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/TwitchReporting/Image-01_1x.webp, /work/TwitchReporting/Image-01_2x.webp 2x" src="/work/TwitchReporting/Image-01_1x.webp" alt="Reporting Step 1" />
@@ -28,7 +30,7 @@
     <span class="small">Reporting Step 3.</span>
 </div>
 
-<p>The changes we made to the report flow were overwhelmingly successful. We saw a huge increase in completion rate, and our specialists reported more accurate entries. The framework we laid also allowed for rapid iteration, and provided a blueprint for adding new report types and&nbsp;reasons.</p>
+<p>The changes made to the report flow were successful. Completion rates went up, and accuracy increased. The framework we laid also allowed for rapid iteration, and provided a blueprint for adding new report types and&nbsp;reasons.</p>
 
 <div class="work-image">
     <img class="image-horizon" srcset="/work/TwitchReporting/Image-04_1x.webp, /work/TwitchReporting/Image-04_2x.webp 2x" src="/work/TwitchReporting/Image-04_1x.webp" alt="Reporting Step 4" />

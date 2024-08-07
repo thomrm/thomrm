@@ -3,7 +3,7 @@
 </script>
 
 <div class="work-header">
-    <div class="small">Quick Shot</div>
+    <div class="small">Short</div>
     <h2><span>NYC Vectors</span></h2>
 </div>
 

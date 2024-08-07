@@ -31,9 +31,9 @@
 
 {#if modalOpen}
     <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-    <div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}" transition:fade={{duration: 100}}>
+    <div class="modal-container" tabindex="0" role="button" on:click={closeModal} style="display: {modalOpen ? 'block' : 'none'}">
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div class="modal" bind:this={modal} on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px" in:fade={{duration: 100, delay: 100}}>
+        <div class="modal" bind:this={modal} on:click|stopPropagation bind:offsetWidth={scrollOffset} bind:clientWidth={scrollClient} style="padding-right: {innerWidth < 700 ? 20 - scrollWidth : 30 - scrollWidth}px">
             <div class="modal__nav">
                 <div class="button-container">
                     <button class="small-button" on:click={previous} disabled={current == 0}>
@@ -64,7 +64,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(21,21,21,0.9);
+        background: rgba(21,21,21,0.98);
         z-index: 3;
     }
 
@@ -89,6 +89,7 @@
         background: var(--Color-Base);
         position: sticky;
         top: 0;
+        z-index: 2;
     }
 
     .modal__content {

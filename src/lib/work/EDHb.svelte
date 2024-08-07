@@ -3,11 +3,11 @@
 </script>
 
 <div class="work-header">
-    <div class="small">App Build</div>
+    <div class="small">Short</div>
     <h2><span>Elder Dragon Handbook</span></h2>
 </div>
 
-<p>EDH (or Commander) is a variant of Magic: The Gathering where players choose a legendary creature card (their commander) to build a deck around. There are many resources for finding and viewing the cards that are able to be a commander, but none of them make it as simple as I wanted. EDHbook was not intended to be better than these other resources, which have many more features and options, but it was intended to be easier. I designed the app in Figma and built it with Sveltekit as a fully functioning&nbsp;proof-of-concept.</p>
+<p>EDH (or Commander) is a variant of Magic: The Gathering where players choose a legendary creature card (their commander) to build a deck around. There are many resources for finding and viewing elligible commanders, but none of them make it as simple as I wanted. EDHbook was not intended to be better than these other resources, which have many more features and options, but it was intended to be&nbsp;easier.</p>
 
 <p>Elder Dragon Handbook uses the Scryfall API for card&nbsp;data.</p>
 

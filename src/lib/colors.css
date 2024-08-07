@@ -15,6 +15,7 @@
     --Color-Base: #FFFFFF;
     --Color-Primary: #151515;
     --Color-Secondary: #353535;
+    --Color-Light: #EEEEEE;
     --Color-Disabled: #DDDDDD;
 }
 
@@ -22,5 +23,6 @@
     --Color-Base: #000000;
     --Color-Primary: #FFFFFF;
     --Color-Secondary: #999999;
+    --Color-Light: #151515;
     --Color-Disabled: #222222;
 }
