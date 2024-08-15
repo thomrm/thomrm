@@ -251,7 +251,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: var(--Padding-Section);
+        padding: var(--Padding-Large);
         padding-top: var(--Padding-Small);
         gap: var(--Padding-XSmall);
         background: var(--Color-Object);

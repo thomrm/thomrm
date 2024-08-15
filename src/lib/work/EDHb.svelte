@@ -32,7 +32,7 @@
 </div>
 
 <div class="work-image">
-    <img class="image-portrait" srcset="/work/EDHb/Image-03_1x.webp, /work/EDHb/Image-03_2x.webp 2x" src="/work/EDHb/Image-03_1x.webp" alt="EDHb Mobile View" />
+    <img class="image-mobile" srcset="/work/EDHb/Image-03_1x.webp, /work/EDHb/Image-03_2x.webp 2x" src="/work/EDHb/Image-03_1x.webp" alt="EDHb Mobile View" />
     <span class="small">Mobile view.</span>
 </div>
 
